@@ -43,4 +43,5 @@ html:
 
 sphinx:
   config:
+    bibtex_reference_style: author_year
     html_show_copyright: false
