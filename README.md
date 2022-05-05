@@ -23,6 +23,20 @@ short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 |:------------|:------------------------------------------------------|
 | 13:10-14.40 | TODO                                                  |
 
+## Getting started
+
+### Quickstart
+
+Launch on regular [Binder](https://mybinder.readthedocs.io/en/latest/index.html).
+Try this first!
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GenericMappingTools/egu22pygmt/main)
+
+Launch on Pangeo Binder. Hosted on AWS US West2 region.
+Requires [GitHub account](https://github.com/signup), but is more powerful (more CPU/RAM).
+
+[![Pangeo Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/GenericMappingTools/egu22pygmt/main)
+
 ## Code of Conduct
 
 All involved individuals must follow the
