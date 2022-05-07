@@ -3,7 +3,13 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+- caption: Details
+  chapters:
+    - title: EGU22 Homepage
+      url: https://www.egu22.eu
+- caption: Tutorials
+  chapters:
+    - file: markdown
+    - file: notebooks
+    - file: markdown-notebooks
