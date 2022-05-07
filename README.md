@@ -1,5 +1,8 @@
 # EGU22 SC5.2: Crafting beautiful maps with PyGMT
 
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://www.generic-mapping-tools.org/egu22pygmt)
+[![deploy-book](https://github.com/GenericMappingTools/egu22pygmt/actions/workflows/deploy-book.yml/badge.svg)](https://github.com/GenericMappingTools/egu22pygmt/actions/workflows/deploy-book.yml)
+
 Material for the [PyGMT](https://github.com/GenericMappingTools/pygmt)
 short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 

@@ -9,3 +9,4 @@ dependencies:
   - python=3.9
   # Optional dependencies
   - geopandas=0.10.2
+  - jupyter-book=0.12.3
