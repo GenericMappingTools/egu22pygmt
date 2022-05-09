@@ -13,3 +13,4 @@ parts:
     - file: markdown
     - file: notebooks
     - file: markdown-notebooks
+    - file: lidar_to_surface
