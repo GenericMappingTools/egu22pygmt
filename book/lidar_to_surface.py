@@ -73,7 +73,7 @@ import xarray as xr
 
 # %%
 # Download LiDAR LAZ file from a URL
-lazfile: str = pygmt.which(
+lazfile = pygmt.which(
     fname="https://opentopography.s3.sdsc.edu/pc-bulk/NZ19_Wellington/CL2_BQ31_2019_1000_2138.laz",
     download=True,
 )
@@ -109,7 +109,7 @@ df = pd.DataFrame(
 
 # %%
 # Get bounding box region
-region: list = pygmt.info(data=df[["x", "y"]], spacing=1)  # West, East, South, North
+region = pygmt.info(data=df[["x", "y"]], spacing=1)  # West, East, South, North
 print(f"Data points covers region: {region}")
 
 # %% [markdown]
@@ -132,7 +132,7 @@ df.describe()
 # from our dataframe table.
 
 # %%
-df_filtered: pd.DataFrame = df.iloc[::20]
+df_filtered = df.iloc[::20]
 print(f"Filtered down to {len(df_filtered)} data points")
 
 # %% [markdown]
@@ -172,7 +172,8 @@ fig.show()
 # - Table 17 of [ASPRS LAS Specification](https://www.asprs.org/a/society/committees/standards/LAS_1_4_r13.pdf)
 
 # %%
-df: pd.DataFrame = df.query(expr="classification != 18")
+df = df.query(expr="classification != 18")
+df
 
 # %% [markdown]
 # ## Get highest elevation points 🍫
@@ -196,7 +197,7 @@ df: pd.DataFrame = df.query(expr="classification != 18")
 
 # %%
 # Preprocess LiDAR data using blockmedian
-df_trimmed: pd.DataFrame = pygmt.blockmedian(
+df_trimmed = pygmt.blockmedian(
     data=df[["x", "y", "z"]],
     T=0.99,  # 99th quantile, i.e. the highest point
     spacing="1+e",
@@ -221,7 +222,7 @@ df_trimmed
 # %%
 # Create a Digital Surface Elevation Model with
 # a spatial resolution of 1m.
-grid: xr.DataArray = pygmt.surface(
+grid = pygmt.surface(
     x=df_trimmed.x,
     y=df_trimmed.y,
     z=df_trimmed.z,
@@ -376,13 +377,13 @@ grid.rio.to_raster(raster_path="DSM_of_Wellington.tif")
 # ## Download and load data
 
 # %%
-filenames: list = [
+filenames = [
     # "",
 ]
 
 df = pd.DataFrame()  # Start an empty DataFrame
 for fname in filenames:
-    lazfile: str = pygmt.which(fname=fname, download=True)
+    lazfile = pygmt.which(fname=fname, download=True)
 
     lazdata = laspy.read(source=lazfile)
     temp_df = pd.DataFrame(
@@ -394,7 +395,7 @@ for fname in filenames:
         }
     )
     # load each point cloud into the DataFrame
-    df: pd.DataFrame = df.append(temp_df, ignore_index=True)
+    df = df.append(temp_df, ignore_index=True)
 
 # %%
 df
