@@ -16,7 +16,7 @@
 # %% [markdown]
 # # **LiDAR Point clouds to 3D surfaces** ✨➡️🏔️
 #
-# In this final tutorial, let's use PyGMT to
+# In this tutorial, let's use PyGMT to
 # perform a more advanced geoprocessing workflow 😎
 #
 # Specifically, we'll learn to filter and interpolate
@@ -262,7 +262,7 @@ fig2.basemap(
     projection="x1:5000",
 )
 pygmt.makecpt(cmap="bukavu", series=[-10, 200])
-fig2.grdimage(grid=grid)
+fig2.grdimage(grid=grid, cmap=True)
 fig2.colorbar(position="JMR", frame=["af+lElevation", "y+lm"])
 fig2.show()
 
@@ -310,9 +310,9 @@ fig3.grdview(
     zscale=0.02,  # vertical exaggeration
     shading=True,  # hillshading
     frame=[
-        'xaf+l"Easting"',
-        'yaf+l"Northing"',
-        'zaf+l"Elevation (m)"',
+        "xaf+lEasting",
+        "yaf+lNorthing",
+        "zaf+lElevation (m)",
         "+tOriental Bay, Wellington",
     ],
 )
