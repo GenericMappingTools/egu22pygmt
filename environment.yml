@@ -9,7 +9,7 @@ dependencies:
   - python=3.9
   - pip=22
   # Optional dependencies
-  - panel=0.12.4
+  - panel=0.13.0
   - geopandas=0.10.2
   - jupyter-book=0.12.3
   - laspy=2.1.2
