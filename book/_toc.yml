@@ -14,3 +14,4 @@ parts:
     - file: notebooks
     - file: markdown-notebooks
     - file: first-figure
+    - file: ecosystem
