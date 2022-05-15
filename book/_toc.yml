@@ -4,11 +4,13 @@
 format: jb-book
 root: intro
 parts:
-- caption: Details
+- caption: 🔗 Details
   chapters:
     - title: EGU22 Homepage
       url: https://www.egu22.eu
-- caption: Tutorials
+    - title: Course materials on GitHub
+      url: https://github.com/GenericMappingTools/egu22pygmt
+- caption: 🧑‍🏫 Tutorials
   chapters:
     - file: markdown
     - file: notebooks
