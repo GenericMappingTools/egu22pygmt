@@ -19,6 +19,10 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
     steps:
     # Checkout current git repository
     - name: Checkout
@@ -28,7 +32,7 @@ jobs:
     - name: Setup Mambaforge
       uses: conda-incubator/setup-miniconda@v2.1.1
       with:
-        activate-environment: pygmt
+        activate-environment: egu22pygmt
         environment-file: environment.yml
         python-version: ${{ matrix.python-version }}
         channels: conda-forge
