@@ -19,17 +19,32 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
     steps:
-    - uses: actions/checkout@v3.0.2
+    # Checkout current git repository
+    - name: Checkout
+      uses: actions/checkout@v3.0.2
 
-    # Install dependencies
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v3.1.2
+    # Install Mambaforge with conda-forge dependencies
+    - name: Setup Mambaforge
+      uses: conda-incubator/setup-miniconda@v2.1.1
       with:
-        python-version: 3.9
+        activate-environment: egu22pygmt
+        environment-file: environment.yml
+        python-version: ${{ matrix.python-version }}
+        channels: conda-forge
+        channel-priority: strict
+        miniforge-version: latest
+        miniforge-variant: Mambaforge
+        mamba-version: "*"
+        use-mamba: true
 
-    - name: Install dependencies
-      run: pip install -r book/requirements.txt
+    # Show installed pkg information for postmortem diagnostic
+    - name: List installed packages
+      run: mamba list
 
     # Build the book
     - name: Build the book
