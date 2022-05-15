@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anatomy of a PyGMT figure &#8212; Crafting beautiful maps with PyGMT</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Crafting beautiful maps with PyGMT</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.egu22.eu">
+   EGU22 Homepage
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Anatomy of a PyGMT figure
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/first-figure.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/GenericMappingTools/egu22pygmt"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/GenericMappingTools/egu22pygmt/issues/new?title=Issue%20on%20page%20%2Ffirst-figure.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/GenericMappingTools/egu22pygmt/edit/main/book/first-figure.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/GenericMappingTools/egu22pygmt/main?urlpath=lab/tree/book/first-figure.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing">
+   Importing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-figure">
+   Creating a figure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-coastlines">
+   Drawing coastlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-a-map-frame">
+   Drawing a map frame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-minor-ticks">
+   Adding minor ticks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-grid-lines">
+   Adding grid lines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-title">
+   Adding a title
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-projection">
+   Choosing a projection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-some-data-to-the-map">
+   Adding some data to the map
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Anatomy of a PyGMT figure</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing">
+   Importing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-figure">
+   Creating a figure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-coastlines">
+   Drawing coastlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-a-map-frame">
+   Drawing a map frame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-minor-ticks">
+   Adding minor ticks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-grid-lines">
+   Adding grid lines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-title">
+   Adding a title
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-projection">
+   Choosing a projection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-some-data-to-the-map">
+   Adding some data to the map
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="anatomy-of-a-pygmt-figure">
+<h1>Anatomy of a PyGMT figure<a class="headerlink" href="#anatomy-of-a-pygmt-figure" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will cover the fundamental concepts behind making figures with PyGMT: importing the package, creating a blank figure, drawing coastlines, drawing a map frame, choosing a projection, and adding some data to the map.</p>
+<p>Let’s get started!</p>
+<div class="section" id="importing">
+<h2>Importing<a class="headerlink" href="#importing" title="Permalink to this headline">¶</a></h2>
+<p>First thing to do is load PyGMT (<code class="docutils literal notranslate"><span class="pre">import</span></code>) so that we can access its functionality. PyGMT has a flat package layout, meaning that you can access everything in it with a single <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygmt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pygmt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pygmt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In Jupyter, you can find out what PyGMT has to offer by typing into a code cell <code class="docutils literal notranslate"><span class="pre">pygmt.</span></code> and hitting the TAB key. This will give you a menu of all our functions.</p>
+</div>
+</div>
+<div class="section" id="creating-a-figure">
+<h2>Creating a figure<a class="headerlink" href="#creating-a-figure" title="Permalink to this headline">¶</a></h2>
+<p>All plotting is handled by the <code class="docutils literal notranslate"><span class="pre">pygmt.Figure</span></code> class. Here is a good analogy for it:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">pygmt.Figure</span></code> is a blank canvas onto which you can lay down plot elements in order.</p>
+</div></blockquote>
+<p>Here is how you can create a figure:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have a blank canvas in the <code class="docutils literal notranslate"><span class="pre">fig</span></code> variable, we can start laying down plot elements that we want to show. We’ll start by putting down some coast lines around Japan.</p>
+</div>
+<div class="section" id="drawing-coastlines">
+<h2>Drawing coastlines<a class="headerlink" href="#drawing-coastlines" title="Permalink to this headline">¶</a></h2>
+<p>Before we can actually include anything in our figure, we need to specify the geographic bounding box that contains the data/features we want to plot. This bounding box is referenced throughout PyGMT as the <strong>region</strong> of a figure and it has the format of a list containing the <strong>West, East, South, and North</strong> (WESN) coordinates of the bounding box.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="p">[</span><span class="mi">125</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that our region is defined, we can lay down the coastlines for this region using the <code class="docutils literal notranslate"><span class="pre">coast</span></code> method of <code class="docutils literal notranslate"><span class="pre">pygmt.Figure</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And to see what the figure looks like, we call the <code class="docutils literal notranslate"><span class="pre">show</span></code> method of <code class="docutils literal notranslate"><span class="pre">pygmt.Figure</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>On Jupyter, <code class="docutils literal notranslate"><span class="pre">show</span></code> will embed a PNG of the figure directly into the notebook. But it can also open a PDF in an external viewer, which is probably what you want if you’re using a plain Python script. See the documentation for <a class="reference external" href="https://www.pygmt.org/v0.6.1/api/generated/pygmt.Figure.show.html#pygmt.Figure.show"><code class="docutils literal notranslate"><span class="pre">pygmt.Figure.show</span></code></a> for more information.</p>
+</div>
+<p>Beyond the outlines, we can also color the land and water regions to make them stand out. Lets start with the water.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now add the land in a light green color.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A few things to note here:</p>
+<ol class="simple">
+<li><p>We added the colored land and water on top of what was already on our canvas (the shorelines), which means that they are still there but we don’t see them because they are below the solid colors.</p></li>
+<li><p>We didn’t need to provide a <code class="docutils literal notranslate"><span class="pre">region</span></code> this time around because PyGMT remembers the last region that was provided. But you could provide one if you want to use a different value.</p></li>
+</ol>
+<p>If we want to have a figure with the shorelines laid out on top of the solid colors, we can make a new figure and add them in the correct order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="c1"># First draw the solid colors</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">)</span>  <span class="c1"># Pass region to the first plot element</span>
+<span class="c1"># Then lay down the shorelines on top</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since these are both part of the same method (<code class="docutils literal notranslate"><span class="pre">coast</span></code>) we can actually combine both into the same call and PyGMT will know that it needs to plot the shorelines on top.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alright, now we have a lovely figure with colored land and water plus some shorelines. But what are the coordinates associated with this map? Lets add a map frame to find out.</p>
+</div>
+<div class="section" id="drawing-a-map-frame">
+<h2>Drawing a map frame<a class="headerlink" href="#drawing-a-map-frame" title="Permalink to this headline">¶</a></h2>
+<p>Adding a nice frame with coordinates, ticks, and labels is one of the jobs of the <code class="docutils literal notranslate"><span class="pre">basemap</span></code> method of <code class="docutils literal notranslate"><span class="pre">pygmt.Figure</span></code>. Here, we’ll use it to add automatic annotations (<code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>) around the figure we just made above. It will be the last item we lay on our figure canvas to guarantee that it sits above any other plot elements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the coordinates are automatically recognized as longitude and latitude and the tick spacing is chosen sensibly as well.</p>
+<p>There are many different ways in which we can customize the frame, from the ticks to the interval to the labels. Here we’ll only cover a few of the most common things you’d want to do. Starting with…</p>
+</div>
+<div class="section" id="adding-minor-ticks">
+<h2>Adding minor ticks<a class="headerlink" href="#adding-minor-ticks" title="Permalink to this headline">¶</a></h2>
+<p>The ticks with annotations are known as “major ticks” (controlled by the <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>) value. You can also add automatic “minor ticks” which have a smaller interval and won’t have annotations by adding <code class="docutils literal notranslate"><span class="pre">&quot;f&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">frame</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;af&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The frame is now set to have both annotations and minor ticks, both of which are optional (so <code class="docutils literal notranslate"><span class="pre">frame=&quot;f&quot;</span></code> would mean only having minor un-annotated ticks). Try it out!</p>
+</div>
+<div class="section" id="adding-grid-lines">
+<h2>Adding grid lines<a class="headerlink" href="#adding-grid-lines" title="Permalink to this headline">¶</a></h2>
+<p>Grid lines are enabled by adding <code class="docutils literal notranslate"><span class="pre">&quot;g&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">frame</span></code>, just like we did for minor ticks. Again you can mix and match the three arguments <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;f&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;g&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;afg&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default the spacing of the grid lines is the same as the annotated major ticks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding a frame with grid lines before you plot the colored land and water or an image will hide the grid lines beneath the subsequent plot. Make sure you put the call to <code class="docutils literal notranslate"><span class="pre">basemap</span></code> last to avoid this.</p>
+</div>
+</div>
+<div class="section" id="adding-a-title">
+<h2>Adding a title<a class="headerlink" href="#adding-a-title" title="Permalink to this headline">¶</a></h2>
+<p>To add a title to the figure, we need to pass in more than one argument to <code class="docutils literal notranslate"><span class="pre">frame</span></code>. We can do this by passing it a list instead of a single string. The extra argument for adding a title is a string with the format <code class="docutils literal notranslate"><span class="pre">&quot;+tMy</span> <span class="pre">title</span> <span class="pre">goes</span> <span class="pre">here&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;afg&quot;</span><span class="p">,</span> <span class="s2">&quot;+tCoastlines around Japan&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="choosing-a-projection">
+<h2>Choosing a projection<a class="headerlink" href="#choosing-a-projection" title="Permalink to this headline">¶</a></h2>
+<p>By default, PyGMT will use a Mercator projection if the region seems to be geographic longitude and latitude. Many other projections are also supported, which may often be better suited for your plots (particularly around the polar regions or for larger global maps).</p>
+<p>For our case, let’s go with a <a class="reference external" href="https://www.pygmt.org/v0.6.1/projections/cyl/cyl_cassini.html#sphx-glr-projections-cyl-cyl-cassini-py">Cassini projection</a>. To specify this, we need to pass the <code class="docutils literal notranslate"><span class="pre">projection</span></code> argument to the first plot method we call. The projection specification is a string starting with a 1-letter code for the projection followed by the projection arguments (particular to each projection) and finishing off with the physical width of the figure (in centimeters or inches, usually). For the Cassini projection, this is what it would look like: <code class="docutils literal notranslate"><span class="pre">projection=&quot;C142.5/40/15c&quot;</span></code> in which <code class="docutils literal notranslate"><span class="pre">C</span></code> is for Cassini projection, <code class="docutils literal notranslate"><span class="pre">142.5</span></code> is the central longitude of the projection set to the center of our region, <code class="docutils literal notranslate"><span class="pre">40</span></code> is the same for the central latitude, and <code class="docutils literal notranslate"><span class="pre">15c</span></code> means the plot will be 15 centimeters wide on the page (this influences the relative size of fonts and tick labels).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;C140/40/15c&quot;</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
+    <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> 
+    <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+    <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;afg&quot;</span><span class="p">,</span> <span class="s2">&quot;+tCoastlines around Japan&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference external" href="https://www.pygmt.org/v0.6.1/projections/index.html">Projections Gallery</a> has examples of each projection along with a description of their parameters, properties, and use cases.</p>
+</div>
+</div>
+<div class="section" id="adding-some-data-to-the-map">
+<h2>Adding some data to the map<a class="headerlink" href="#adding-some-data-to-the-map" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we have a great base map onto which we can plot some data. PyGMT offers a variety of example datasets that we can easily fetch to try things out. Since we’re looking at Japan, we can use the <code class="docutils literal notranslate"><span class="pre">japan-quakes</span></code>  data to get a table of earthquake hypocenters and magnitudes around this area. The data are returned in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> to make it easier to handle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">load_sample_data</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;japan_quakes&quot;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Use function <a class="reference external" href="https://www.pygmt.org/v0.6.1/api/generated/pygmt.datasets.list_sample_data.html#pygmt.datasets.list_sample_data"><code class="docutils literal notranslate"><span class="pre">pygmt.datasets.list_sample_data</span></code></a> to get a list of all datasets available.</p>
+</div>
+<p>To add point and line data to a figure, use the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method of <code class="docutils literal notranslate"><span class="pre">pygmt.Figure</span></code>. Lets start by plotting the earthquake epicenters. To do this, we’ll pass the data longitude and latitude coordinates as the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> arguments to <code class="docutils literal notranslate"><span class="pre">plot</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;C140/40/15c&quot;</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
+    <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> 
+    <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+    <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;afg&quot;</span><span class="p">,</span> <span class="s2">&quot;+tEarthquakes around Japan&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, PyGMT will plot lines connecting each of the points in our data. This is probably not what we want to do given that our data are epicenters. Instead, lets plot using <strong>circles</strong>. This requires passing in the <code class="docutils literal notranslate"><span class="pre">style</span></code> argument to <code class="docutils literal notranslate"><span class="pre">plot</span></code>, which should be a string like <code class="docutils literal notranslate"><span class="pre">c0.3c</span></code> with the first <code class="docutils literal notranslate"><span class="pre">c</span></code> specifying a circle and <code class="docutils literal notranslate"><span class="pre">0.3c</span></code> specifying that circles should be 0.3 centimeters in size. We’ll also pass in <code class="docutils literal notranslate"><span class="pre">color</span></code> to make the circles opaque with a given color (otherwise they would be just the outlines by default).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;C140/40/15c&quot;</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
+    <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> 
+    <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+    <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;c0.3c&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;afg&quot;</span><span class="p">,</span> <span class="s2">&quot;+tEarthquakes around Japan&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">pen</span></code> to <code class="docutils literal notranslate"><span class="pre">plot</span></code> to control how the outline of the circles are drawn. For example, <code class="docutils literal notranslate"><span class="pre">pen=&quot;black&quot;</span></code> will draw a black outline.</p>
+</div>
+<p>It would be great to also represent the depth of the earthquakes somehow. We can do this by encoding the depth information as the color of the circles. We need to make 2 changes to the code above to achieve this:</p>
+<ol class="simple">
+<li><p>Configure a “color palette table (CPT)” that maps colors to data values. In matplotlib, this is known as a colormap or <code class="docutils literal notranslate"><span class="pre">cmap</span></code>.</p></li>
+<li><p>Tell <code class="docutils literal notranslate"><span class="pre">plot</span></code> to use the depth values and the CPT/cmap created to pain the circles.</p></li>
+</ol>
+<p>Step 1 is done using <code class="docutils literal notranslate"><span class="pre">pygmt.makecpt</span></code>, which takes a colormap name through the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> argument and the min/max values of the data through the <code class="docutils literal notranslate"><span class="pre">series</span></code> argument.</p>
+<p>Step 2 is done by passing in the <code class="docutils literal notranslate"><span class="pre">data.depth_km</span></code> values to <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">cmap=True</span></code>, telling PyGMT to use the current CPT created through <code class="docutils literal notranslate"><span class="pre">makecpt</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;C140/40/15c&quot;</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
+    <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> 
+    <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+    <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">pygmt</span><span class="o">.</span><span class="n">makecpt</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">depth_km</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">depth_km</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;c0.3c&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">depth_km</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;afg&quot;</span><span class="p">,</span> <span class="s2">&quot;+tEarthquakes around Japan&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The GMT documentation has a <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/cookbook/cpts.html">list of all available colormaps/CPTs</a>. There are many to choose from!</p>
+</div>
+<p>As a final step, we need to add a colorbar to the figure so we know what value each color represents. This is done using the <code class="docutils literal notranslate"><span class="pre">colorbar</span></code> method of <code class="docutils literal notranslate"><span class="pre">pygmt.Figure</span></code>, which takes a <code class="docutils literal notranslate"><span class="pre">frame</span></code> argument much like the one we use to set the map frame. Only this time, it sets the frame of the colorbar. To make our colorbar look nice, we’ll set the frame to have automatically annotated major ticks and a label on the y-axis specifying the variable and units.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;C140/40/15c&quot;</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
+    <span class="n">land</span><span class="o">=</span><span class="s2">&quot;lightgreen&quot;</span><span class="p">,</span> 
+    <span class="n">water</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+    <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">pygmt</span><span class="o">.</span><span class="n">makecpt</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">depth_km</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">depth_km</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;c0.3c&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">depth_km</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;afg&quot;</span><span class="p">,</span> <span class="s2">&quot;+tEarthquakes around Japan&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;y+lDepth (km)&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="markdown-notebooks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The PyGMT Team<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
+This content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
