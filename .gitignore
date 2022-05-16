@@ -1,5 +1,6 @@
 # Data files
 *.laz
+*.nc
 *.png
 *.tif
 
