@@ -10,8 +10,5 @@ parts:
       url: https://www.egu22.eu
 - caption: Tutorials
   chapters:
-    - file: markdown
-    - file: notebooks
-    - file: markdown-notebooks
     - file: first-figure
     - file: ecosystem
