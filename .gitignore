@@ -1,3 +1,9 @@
+# Data files
+*.laz
+*.nc
+*.png
+*.tif
+
 # Jupyter Book
 /book/_build/
 

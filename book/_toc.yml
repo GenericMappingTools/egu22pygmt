@@ -12,3 +12,4 @@ parts:
   chapters:
     - file: first-figure
     - file: ecosystem
+    - file: lidar_to_surface
