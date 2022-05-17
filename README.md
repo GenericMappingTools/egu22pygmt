@@ -9,7 +9,7 @@ short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 **Conveners**:
 - [Wei Ji Leong](https://github.com/weiji14)
 - [Leonardo Uieda](https://github.com/leouieda)
-- [Meghan Jones](https://github.com/meghanrjones)
+- [Max Jones](https://github.com/meghanrjones)
 - [Andre Luiz Belem](https://github.com/andrebelem)
 
 **When**:
@@ -24,7 +24,11 @@ short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 
 |  Time (UTC) | Event                                                 |
 |:------------|:------------------------------------------------------|
-| 13:10-14.40 | TODO                                                  |
+| 13:10-13:20 | Introduction                                          |
+| 13:20-13.40 | Anatomy of a PyGMT figure                             |
+| 13:40-14.00 | Integration with the scientific Python ecosystem      |
+| 14:00-14.20 | Making some Mars maps with pygmt                      |
+| 14:20-14.40 | LiDAR Point clouds to 3D surfaces                     |
 
 ## Getting started
 
