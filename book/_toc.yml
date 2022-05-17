@@ -12,7 +12,6 @@ parts:
       url: https://github.com/GenericMappingTools/egu22pygmt
 - caption: 🧑‍🏫 Tutorials
   chapters:
-    - file: markdown
-    - file: notebooks
-    - file: markdown-notebooks
     - file: first-figure
+    - file: ecosystem
+    - file: lidar_to_surface

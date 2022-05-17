@@ -9,7 +9,9 @@ dependencies:
   - python=3.9
   - pip=22
   # Optional dependencies
+  - panel=0.13.0
   - geopandas=0.10.2
+  - gdown=4.4.0
   - jupyter-book=0.12.3
   - laspy=2.1.2
   - rioxarray=0.11.1
