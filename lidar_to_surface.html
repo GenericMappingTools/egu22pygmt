@@ -1,0 +1,1713 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiDAR Point clouds to 3D surfaces ✨➡️🏔️ &#8212; Crafting beautiful maps with PyGMT</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Integration with the scientific Python ecosystem 🐍" href="ecosystem.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Crafting beautiful maps with PyGMT</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.egu22.eu">
+   EGU22 Homepage
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first-figure.html">
+   Anatomy of a PyGMT figure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ecosystem.html">
+   Integration with the scientific Python ecosystem 🐍
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <strong>
+    LiDAR Point clouds to 3D surfaces
+   </strong>
+   ✨➡️🏔️
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lidar_to_surface.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/GenericMappingTools/egu22pygmt"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/GenericMappingTools/egu22pygmt/issues/new?title=Issue%20on%20page%20%2Flidar_to_surface.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/GenericMappingTools/egu22pygmt/edit/main/book/lidar_to_surface.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/GenericMappingTools/egu22pygmt/main?urlpath=lab/tree/book/lidar_to_surface.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <strong>
+    LiDAR Point clouds to 3D surfaces
+   </strong>
+   ✨➡️🏔️
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-started">
+     🎉 Getting started
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-lidar-data">
+   0️⃣ The LiDAR data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-a-point-cloud">
+     Loading a point cloud 🌧️
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-data-preview">
+     Quick data preview ⚡
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-digital-surface-model-dsm">
+   1️⃣ Creating a Digital Surface Model (DSM)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-highest-elevation-points">
+     Get highest elevation points 🍫
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#turn-points-into-a-grid">
+     Turn points into a grid 🫓
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-a-digital-surface-model-dsm">
+   2️⃣ Plotting a Digital Surface Model (DSM)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-in-2d">
+     <strong>
+      Plot in 2D
+     </strong>
+     🏳️‍🌈
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-3d-perspective-view">
+     Plot 3D perspective view ⛰️
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-figures-and-output-dsm-to-geotiff">
+     Save figures and output DSM to GeoTIFF 💾
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-exercise-create-a-3d-surface-map-of-another-area">
+   3️⃣ Bonus exercise - Create a 3D surface map of another area
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-and-load-data">
+     Download and load data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-dsm">
+     Create a DSM
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-dsm">
+     Plot the DSM
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>LiDAR Point clouds to 3D surfaces ✨➡️🏔️</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <strong>
+    LiDAR Point clouds to 3D surfaces
+   </strong>
+   ✨➡️🏔️
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-started">
+     🎉 Getting started
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-lidar-data">
+   0️⃣ The LiDAR data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-a-point-cloud">
+     Loading a point cloud 🌧️
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-data-preview">
+     Quick data preview ⚡
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-digital-surface-model-dsm">
+   1️⃣ Creating a Digital Surface Model (DSM)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-highest-elevation-points">
+     Get highest elevation points 🍫
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#turn-points-into-a-grid">
+     Turn points into a grid 🫓
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-a-digital-surface-model-dsm">
+   2️⃣ Plotting a Digital Surface Model (DSM)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-in-2d">
+     <strong>
+      Plot in 2D
+     </strong>
+     🏳️‍🌈
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-3d-perspective-view">
+     Plot 3D perspective view ⛰️
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-figures-and-output-dsm-to-geotiff">
+     Save figures and output DSM to GeoTIFF 💾
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-exercise-create-a-3d-surface-map-of-another-area">
+   3️⃣ Bonus exercise - Create a 3D surface map of another area
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-and-load-data">
+     Download and load data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-dsm">
+     Create a DSM
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-dsm">
+     Plot the DSM
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lidar-point-clouds-to-3d-surfaces">
+<h1><strong>LiDAR Point clouds to 3D surfaces</strong> ✨➡️🏔️<a class="headerlink" href="#lidar-point-clouds-to-3d-surfaces" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, let’s use PyGMT to
+perform a more advanced geoprocessing workflow 😎</p>
+<p>Specifically, we’ll learn to filter and interpolate
+a LiDAR point cloud onto a regular grid surface 🏁</p>
+<p>At the end, we’ll also make a 🚠 3D perspective plot for
+the Digital Surface Model (DSM) produced through this exercise!</p>
+<div class="section" id="getting-started">
+<h2>🎉 Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Begin by importing some Python 🐍 libraries.</p>
+<p>Besides <a class="reference external" href="https://www.pygmt.org">pygmt</a>, we’ll also be using:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/laspy/laspy">laspy</a> to read in LAZ LiDAR files 🌃</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org">pandas</a> for managing tabular data 🀤</p></li>
+<li><p><a class="reference external" href="https://corteva.github.io/rioxarray">rioxarray</a> to export our DSM to a GeoTIFF 🗺️</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">laspy</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pygmt</span>
+<span class="kn">import</span> <span class="nn">rioxarray</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-lidar-data">
+<h1>0️⃣ The LiDAR data<a class="headerlink" href="#the-lidar-data" title="Permalink to this headline">¶</a></h1>
+<p>Let’s visit <a class="reference external" href="https://en.wikipedia.org/wiki/Wellington">Wellington</a>
+which is the capital city of New Zealand 🇳🇿.</p>
+<p>They recently had a LiDAR survey done between March 2019 to March 2020 🛩️,
+with the point cloud and derived products published under an open
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license.</p>
+<ul class="simple">
+<li><p>OpenTopography link: <a class="reference external" href="https://doi.org/10.5069/G9K935QX">https://doi.org/10.5069/G9K935QX</a></p></li>
+<li><p>Bulk download location: <a class="reference external" href="https://opentopography.s3.sdsc.edu/minio/pc-bulk/NZ19_Wellington">https://opentopography.s3.sdsc.edu/minio/pc-bulk/NZ19_Wellington</a></p></li>
+<li><p>Official 1m DSM from LINZ: <a class="reference external" href="https://data.linz.govt.nz/layer/105024-wellington-city-lidar-1m-dsm-2019-2020">https://data.linz.govt.nz/layer/105024-wellington-city-lidar-1m-dsm-2019-2020</a></p></li>
+</ul>
+<p>🔖 References:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/on-location/from-points-to-pixels-creating-digital-elevation-models-from-open-topography-point-clouds-abe616d06860">https://medium.com/on-location/from-points-to-pixels-creating-digital-elevation-models-from-open-topography-point-clouds-abe616d06860</a></p></li>
+<li><p><a class="reference external" href="https://github.com/GenericMappingTools/foss4g2019oceania/blob/v1/3_lidar_to_surface.ipynb">https://github.com/GenericMappingTools/foss4g2019oceania/blob/v1/3_lidar_to_surface.ipynb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/weiji14/30DayMapChallenge2021/blob/v0.3.1/day17_land.py">https://github.com/weiji14/30DayMapChallenge2021/blob/v0.3.1/day17_land.py</a></p></li>
+</ul>
+<p>First though, we’ll need to download a sample file to play with 🎮</p>
+<p>Luckily for us,
+there is a function called <a class="reference external" href="https://www.pygmt.org/v0.6.1/api/generated/pygmt.which">pygmt.which</a>
+that has to ability to do just that!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">download=True</span></code> option can be used to download ⬇️ a remote file to our local working directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download LiDAR LAZ file from a URL</span>
+<span class="n">lazfile</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">which</span><span class="p">(</span>
+    <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;https://opentopography.s3.sdsc.edu/pc-bulk/NZ19_Wellington/CL2_BQ31_2019_1000_2138.laz&quot;</span><span class="p">,</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lazfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CL2_BQ31_2019_1000_2138.laz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-a-point-cloud">
+<h2>Loading a point cloud 🌧️<a class="headerlink" href="#loading-a-point-cloud" title="Permalink to this headline">¶</a></h2>
+<p>Now we can use <a class="reference external" href="https://laspy.readthedocs.io">laspy</a> to read in our example LAZ file
+into a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/1.4/reference/api/pandas.DataFrame.html">pandas.DataFrame</a>.</p>
+<p>The data will be kept in a variable called ‘df’ which stands for dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load LAZ data into a pandas DataFrame</span>
+<span class="n">lazdata</span> <span class="o">=</span> <span class="n">laspy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">lazfile</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">scaled_array</span><span class="p">(),</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">scaled_array</span><span class="p">(),</span>
+        <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">scaled_array</span><span class="p">(),</span>
+        <span class="s2">&quot;classification&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">classification</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quick-data-preview">
+<h2>Quick data preview ⚡<a class="headerlink" href="#quick-data-preview" title="Permalink to this headline">¶</a></h2>
+<p>Let’s get the bounding box 📦 region of our study area using
+<a class="reference external" href="https://www.pygmt.org/v0.6.1/api/generated/pygmt.info.html">pygmt.info</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get bounding box region</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]],</span> <span class="n">spacing</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># West, East, South, North</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data points covers region: </span><span class="si">{</span><span class="n">region</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data points covers region: [1749760. 1750240. 5426880. 5427600.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check how many 🗃️ data points (rows) are in the table
+and get some summary statistics printed out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print summary statistics</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> data points&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total of 7322702 data points
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>7.322702e+06</td>
+      <td>7.322702e+06</td>
+      <td>7.322702e+06</td>
+      <td>7.322702e+06</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.750009e+06</td>
+      <td>5.427144e+06</td>
+      <td>6.536329e+01</td>
+      <td>4.477295e+00</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.337038e+02</td>
+      <td>1.713325e+02</td>
+      <td>4.428189e+01</td>
+      <td>2.212308e+00</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.749760e+06</td>
+      <td>5.426880e+06</td>
+      <td>-1.377360e+02</td>
+      <td>1.000000e+00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.749896e+06</td>
+      <td>5.426997e+06</td>
+      <td>3.380700e+01</td>
+      <td>3.000000e+00</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.750012e+06</td>
+      <td>5.427125e+06</td>
+      <td>6.012200e+01</td>
+      <td>5.000000e+00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.750121e+06</td>
+      <td>5.427280e+06</td>
+      <td>9.645000e+01</td>
+      <td>5.000000e+00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.750240e+06</td>
+      <td>5.427600e+06</td>
+      <td>3.186180e+02</td>
+      <td>1.800000e+01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>More than 7 million points, that’s a lot! 🤯</p>
+<p>Let’s try to take a quick look of our LiDAR elevation points on a map 🗺️</p>
+<p>PyGMT <em>can</em> plot these many points, but it might take a long time ⏳,
+so let’s do a quick filter by taking every
+<a class="reference external" href="https://stackoverflow.com/questions/25055712/pandas-every-nth-rowhttps://stackoverflow.com/questions/25055712/pandas-every-nth-row">n-th row</a>
+from our dataframe table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">20</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Filtered down to </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_filtered</span><span class="p">)</span><span class="si">}</span><span class="s2"> data points&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filtered down to 366136 data points
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can visualize these quickly on a map with PyGMT 😀</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot XYZ points on a map</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;x1:5000&quot;</span><span class="p">)</span>
+<span class="n">pygmt</span><span class="o">.</span><span class="n">makecpt</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bukavu&quot;</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">df_filtered</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df_filtered</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">df_filtered</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;c0.03c&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;JMR&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;af+lElevation&quot;</span><span class="p">,</span> <span class="s2">&quot;y+lm&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lidar_to_surface_17_0.png" src="_images/lidar_to_surface_17_0.png" />
+</div>
+</div>
+<p>It’s hard to make out what the objects are,
+but hopefully you’ll see what looks like a wharf with ⛵ boats on the top left corner.</p>
+<p>This is showing us a part of Oriental Bay in Wellington,
+with Mount Victoria ⛰️ towards the Southeast corner of the map.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="creating-a-digital-surface-model-dsm">
+<h1>1️⃣ Creating a Digital Surface Model (DSM)<a class="headerlink" href="#creating-a-digital-surface-model-dsm" title="Permalink to this headline">¶</a></h1>
+<p>Let’s now produce a digital surface model from our point cloud 🌧️</p>
+<p>We’ll first do some proper spatial data cleaning 🧹 using both
+<a class="reference external" href="https://pandas.pydata.org">pandas</a> and <a class="reference external" href="https://www.pygmt.org">pygmt</a>.</p>
+<p>First step is to remove the LiDAR points classified as high noise 🔊
+which is done by querying all the points that are not ‘18’.</p>
+<p>🔖 References:</p>
+<ul class="simple">
+<li><p>Table 17 of <a class="reference external" href="https://www.asprs.org/a/society/committees/standards/LAS_1_4_r13.pdf">ASPRS LAS Specification</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">expr</span><span class="o">=</span><span class="s2">&quot;classification != 18&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1749771.56</td>
+      <td>5427498.77</td>
+      <td>-0.724</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1749771.52</td>
+      <td>5427498.46</td>
+      <td>-0.708</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1749771.48</td>
+      <td>5427498.15</td>
+      <td>-0.700</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1749771.45</td>
+      <td>5427497.84</td>
+      <td>-0.683</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1749771.41</td>
+      <td>5427497.54</td>
+      <td>-0.630</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7322687</th>
+      <td>1749760.95</td>
+      <td>5427567.17</td>
+      <td>-0.479</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>7322698</th>
+      <td>1749760.23</td>
+      <td>5427567.65</td>
+      <td>-0.488</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>7322699</th>
+      <td>1749760.26</td>
+      <td>5427567.98</td>
+      <td>-0.442</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>7322700</th>
+      <td>1749760.29</td>
+      <td>5427568.29</td>
+      <td>-0.417</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>7322701</th>
+      <td>1749760.32</td>
+      <td>5427568.62</td>
+      <td>-0.404</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+<p>7232453 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="get-highest-elevation-points">
+<h2>Get highest elevation points 🍫<a class="headerlink" href="#get-highest-elevation-points" title="Permalink to this headline">¶</a></h2>
+<p>Next, we’ll use the
+<a class="reference external" href="https://www.pygmt.org/v0.6.1/api/generated/pygmt.blockmedian.html">blockmedian</a>
+function to trim 🪒 down the points spatially.</p>
+<p>By default, this function computes a single median elevation
+for every pixel on an equally spaced grid 🏁</p>
+<p>For a Digital <strong>Surface</strong> Elevation Model (DSM) though,
+we should pick the highest elevation 🔝 instead of the median.</p>
+<p>So we’ll tell blockmedian to use the 99th
+<a class="reference external" href="https://docs.generic-mapping-tools.org/latest/blockmedian.html#t">quantile</a> (T) instead,
+and set our output grid spacing to be exactly 1 metre (1+e) 📏</p>
+<p>Note that we’ll only be taking the 🇽, 🇾, 🇿 (elevation) columns for this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preprocess LiDAR data using blockmedian</span>
+<span class="n">df_trimmed</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">blockmedian</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]],</span>
+    <span class="n">T</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span>  <span class="c1"># 99th quantile, i.e. the highest point</span>
+    <span class="n">spacing</span><span class="o">=</span><span class="s2">&quot;1+e&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">df_trimmed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1749760.05</td>
+      <td>5427599.54</td>
+      <td>-0.755</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1749760.67</td>
+      <td>5427599.83</td>
+      <td>-0.737</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1749761.87</td>
+      <td>5427599.71</td>
+      <td>-0.747</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1749765.39</td>
+      <td>5427599.55</td>
+      <td>-0.701</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1749765.96</td>
+      <td>5427599.73</td>
+      <td>-0.742</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>311584</th>
+      <td>1750236.41</td>
+      <td>5426880.41</td>
+      <td>178.756</td>
+    </tr>
+    <tr>
+      <th>311585</th>
+      <td>1750237.32</td>
+      <td>5426880.47</td>
+      <td>179.132</td>
+    </tr>
+    <tr>
+      <th>311586</th>
+      <td>1750238.50</td>
+      <td>5426880.40</td>
+      <td>179.232</td>
+    </tr>
+    <tr>
+      <th>311587</th>
+      <td>1750239.36</td>
+      <td>5426880.46</td>
+      <td>179.517</td>
+    </tr>
+    <tr>
+      <th>311588</th>
+      <td>1750239.99</td>
+      <td>5426880.49</td>
+      <td>179.622</td>
+    </tr>
+  </tbody>
+</table>
+<p>311589 rows × 3 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="turn-points-into-a-grid">
+<h2>Turn points into a grid 🫓<a class="headerlink" href="#turn-points-into-a-grid" title="Permalink to this headline">¶</a></h2>
+<p>Lastly, we’ll use <a class="reference external" href="https://www.pygmt.org/v0.6.1/api/generated/pygmt.surface.html">pygmt.surface</a>
+to produce a grid from the 🇽, 🇾, 🇿 data points.</p>
+<p>Make sure to set our desired grid spacing to be exactly 📏 1 metre (1+e) again.</p>
+<p>Also, we’ll set a tension factor (T) of 0.35 which is suitable for steep topography
+(since we have some 🏠 buildings with ‘steep’ vertical edges).</p>
+<p>🚨 Note that this might take some time to run.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Digital Surface Elevation Model with</span>
+<span class="c1"># a spatial resolution of 1m.</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">df_trimmed</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">df_trimmed</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+    <span class="n">z</span><span class="o">=</span><span class="n">df_trimmed</span><span class="o">.</span><span class="n">z</span><span class="p">,</span>
+    <span class="n">spacing</span><span class="o">=</span><span class="s2">&quot;1+e&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>  <span class="c1"># xmin, xmax, ymin, ymax</span>
+    <span class="n">T</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span>  <span class="c1"># tension factor</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>surface [WARNING]: 53246 unusable points were supplied; these will be ignored.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>surface [WARNING]: You should have pre-processed the data with block-mean, -median, or -mode.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>surface [WARNING]: Check that previous processing steps write results with enough decimals.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>surface [WARNING]: Possibly some data were half-way between nodes and subject to IEEE 754 rounding.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look 👀 at the grid output.</p>
+<p>The grid will be returned as an
+<a class="reference external" href="https://docs.xarray.dev/en/v2022.03.0/generated/xarray.DataArray.html">xarray.DataArray</a>,
+with each pixel’s elevation (🇿 value in metres) stored at every 🇽 and 🇾 coordinate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;z&#x27; (y: 721, x: 481)&gt;
+array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
+        179.47954   , 179.68286   ],
+       [ 32.929073  ,  33.571014  ,  33.91027   , ..., 178.95854   ,
+        179.3416    , 179.49734   ],
+       [ 32.99532   ,  34.62854   ,  35.717705  , ..., 178.77904   ,
+        179.26633   , 179.20392   ],
+       ...,
+       [ -0.7089864 ,  -0.7099118 ,  -0.7231264 , ...,  -0.68712777,
+         -0.67993474,  -0.65520626],
+       [ -0.7150018 ,  -0.72270995,  -0.7585947 , ...,  -0.6843457 ,
+         -0.68121314,  -0.6624484 ],
+       [ -0.7903585 ,  -0.75000775,  -0.78331774, ...,  -0.70826954,
+         -0.68685687,  -0.6937212 ]], dtype=float32)
+Coordinates:
+  * x        (x) float64 1.75e+06 1.75e+06 1.75e+06 ... 1.75e+06 1.75e+06
+  * y        (y) float64 5.427e+06 5.427e+06 5.427e+06 ... 5.428e+06 5.428e+06
+Attributes:
+    long_name:     z
+    actual_range:  [ -1.83348048 192.18907166]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'z'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 721</li><li><span class='xr-has-index'>x</span>: 481</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-d0557ee8-83a8-4d1e-90fc-abd3007e497a' class='xr-array-in' type='checkbox' checked><label for='section-d0557ee8-83a8-4d1e-90fc-abd3007e497a' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>32.83 33.06 33.24 33.48 33.56 ... -0.732 -0.7083 -0.6869 -0.6937</span></div><div class='xr-array-data'><pre>array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
+        179.47954   , 179.68286   ],
+       [ 32.929073  ,  33.571014  ,  33.91027   , ..., 178.95854   ,
+        179.3416    , 179.49734   ],
+       [ 32.99532   ,  34.62854   ,  35.717705  , ..., 178.77904   ,
+        179.26633   , 179.20392   ],
+       ...,
+       [ -0.7089864 ,  -0.7099118 ,  -0.7231264 , ...,  -0.68712777,
+         -0.67993474,  -0.65520626],
+       [ -0.7150018 ,  -0.72270995,  -0.7585947 , ...,  -0.6843457 ,
+         -0.68121314,  -0.6624484 ],
+       [ -0.7903585 ,  -0.75000775,  -0.78331774, ...,  -0.70826954,
+         -0.68685687,  -0.6937212 ]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-c8f56b9b-73fa-4d14-b8ff-4f5d933cc200' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c8f56b9b-73fa-4d14-b8ff-4f5d933cc200' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.75e+06 1.75e+06 ... 1.75e+06</div><input id='attrs-e496d413-ab44-48a9-b0e4-ce6436382690' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e496d413-ab44-48a9-b0e4-ce6436382690' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-810bb32c-904d-4449-9b6c-277065931ee8' class='xr-var-data-in' type='checkbox'><label for='data-810bb32c-904d-4449-9b6c-277065931ee8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>x</dd><dt><span>actual_range :</span></dt><dd>[1749760. 1750240.]</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([1749760., 1749761., 1749762., ..., 1750238., 1750239., 1750240.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.427e+06 5.427e+06 ... 5.428e+06</div><input id='attrs-1c7ccc5e-d7cc-44a9-bd70-2ad8d9b9c364' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1c7ccc5e-d7cc-44a9-bd70-2ad8d9b9c364' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6e24f9e1-9b5b-4887-9bb9-ace4d2460800' class='xr-var-data-in' type='checkbox'><label for='data-6e24f9e1-9b5b-4887-9bb9-ace4d2460800' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>y</dd><dt><span>actual_range :</span></dt><dd>[5426880. 5427600.]</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([5426880., 5426881., 5426882., ..., 5427598., 5427599., 5427600.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fa9d4943-b114-4213-8b9f-fdb0cef7c5c0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fa9d4943-b114-4213-8b9f-fdb0cef7c5c0' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>z</dd><dt><span>actual_range :</span></dt><dd>[ -1.83348048 192.18907166]</dd></dl></div></li></ul></div></div></div></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="plotting-a-digital-surface-model-dsm">
+<h1>2️⃣ Plotting a Digital Surface Model (DSM)<a class="headerlink" href="#plotting-a-digital-surface-model-dsm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plot-in-2d">
+<h2><strong>Plot in 2D</strong> 🏳️‍🌈<a class="headerlink" href="#plot-in-2d" title="Permalink to this headline">¶</a></h2>
+<p>Now we can plot our Digital Surface Model (DSM) grid 🏁</p>
+<p>This can be done by passing the
+<a class="reference external" href="https://docs.xarray.dev/en/v2022.03.0/generated/xarray.DataArray.html">xarray.DataArray</a>
+grid into
+<a class="reference external" href="https://www.pygmt.org/v0.6.1/api/generated/pygmt.Figure.grdimage">pygmt.Figure.grdimage</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span>
+    <span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1_749_760</span><span class="p">,</span> <span class="mi">1_750_240</span><span class="p">,</span> <span class="mi">5_426_880</span><span class="p">,</span> <span class="mi">5_427_600</span><span class="p">],</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;x1:5000&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">pygmt</span><span class="o">.</span><span class="n">makecpt</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bukavu&quot;</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">grdimage</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;JMR&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;af+lElevation&quot;</span><span class="p">,</span> <span class="s2">&quot;y+lm&quot;</span><span class="p">])</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lidar_to_surface_32_0.png" src="_images/lidar_to_surface_32_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plot-3d-perspective-view">
+<h2>Plot 3D perspective view ⛰️<a class="headerlink" href="#plot-3d-perspective-view" title="Permalink to this headline">¶</a></h2>
+<p>Now comes the cool part 💯</p>
+<p>PyGMT has a <a class="reference external" href="https://pygmt-git-foss4g2019oceania.gmt.now.sh/api/generated/pygmt.Figure.grdview.html#pygmt.Figure.grdview">grdview</a>
+function to make high quality 3D perspective plots of our elevation surface!</p>
+<p>Besides providing the elevation ‘grid’, there are a few basic things to configure:</p>
+<ul class="simple">
+<li><p>cmap - name of 🌈 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/cookbook/cpts.html#id3">colormap</a> to use</p></li>
+<li><p>surftype - we’ll use ‘s’ here which just creates a regular surface 🏄</p></li>
+<li><p>perspective - set azimuth angle (e.g. 315 for NorthWest) and 📐 elevation (e.g 30 degrees) of the viewpoint</p></li>
+<li><p>zscale - a vertical exaggeration 🔺 factor, we’ll use 0.02 here</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig3</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig3</span><span class="o">.</span><span class="n">grdview</span><span class="p">(</span>
+    <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bukavu&quot;</span><span class="p">,</span>
+    <span class="n">surftype</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>  <span class="c1"># surface plot</span>
+    <span class="n">perspective</span><span class="o">=</span><span class="p">[</span><span class="mi">315</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>  <span class="c1"># azimuth bearing, and elevation angle</span>
+    <span class="n">zscale</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>  <span class="c1"># vertical exaggeration</span>
+<span class="p">)</span>
+<span class="n">fig3</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lidar_to_surface_34_0.png" src="_images/lidar_to_surface_34_0.png" />
+</div>
+</div>
+<p>There are also other things we can 🧰 configure such as:</p>
+<ul class="simple">
+<li><p>Hillshading ⛱️ using <code class="docutils literal notranslate"><span class="pre">shading=True</span></code></p></li>
+<li><p>A proper 3D map frame 🖼️ with:</p>
+<ul>
+<li><p>automatic tick marks on x and y axis (e.g. <code class="docutils literal notranslate"><span class="pre">xaf+lLabel</span></code>)</p></li>
+<li><p>z-axis automatic tick marks (<code class="docutils literal notranslate"><span class="pre">zaf+lLabel</span></code>)</p></li>
+<li><p>plot title (<code class="docutils literal notranslate"><span class="pre">+tMy</span> <span class="pre">Title</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig3</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig3</span><span class="o">.</span><span class="n">grdview</span><span class="p">(</span>
+    <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bukavu&quot;</span><span class="p">,</span>
+    <span class="n">surftype</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>  <span class="c1"># surface plot</span>
+    <span class="n">perspective</span><span class="o">=</span><span class="p">[</span><span class="mi">315</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>  <span class="c1"># azimuth bearing, and elevation angle</span>
+    <span class="n">zscale</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>  <span class="c1"># vertical exaggeration</span>
+    <span class="n">shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># hillshading</span>
+    <span class="n">frame</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;xaf+lEasting&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;yaf+lNorthing&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;zaf+lElevation (m)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;+tOriental Bay, Wellington&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="n">fig3</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lidar_to_surface_36_0.png" src="_images/lidar_to_surface_36_0.png" />
+</div>
+</div>
+<p>Feel free to have a go at changing the azimuth and elevation angle to get a different view 🔭</p>
+<p>You can also try to tweak the vertical exaggeration factor 🗼
+and play around with the map frame!</p>
+</div>
+<div class="section" id="save-figures-and-output-dsm-to-geotiff">
+<h2>Save figures and output DSM to GeoTIFF 💾<a class="headerlink" href="#save-figures-and-output-dsm-to-geotiff" title="Permalink to this headline">¶</a></h2>
+<p>Time to save your work!</p>
+<p>We’ll save each of our figures into separate files first 🗃️</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s2">&quot;wellington_1d_lidar.png&quot;</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s2">&quot;wellington_2d_dsm_map.png&quot;</span><span class="p">)</span>
+<span class="n">fig3</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s2">&quot;wellington_3d_dsm_view.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Also, it’ll be good to have a proper GeoTIFF of the DSM we made.
+This can be done using
+<a class="reference external" href="https://corteva.github.io/rioxarray/html/examples/convert_to_raster.html">rioxarray’s to_raster method</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">to_raster</span><span class="p">(</span><span class="n">raster_path</span><span class="o">=</span><span class="s2">&quot;DSM_of_Wellington.tif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The files should now appear on the file list on the left,
+and you can download them to your computer.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="bonus-exercise-create-a-3d-surface-map-of-another-area">
+<h1>3️⃣ Bonus exercise - Create a 3D surface map of another area<a class="headerlink" href="#bonus-exercise-create-a-3d-surface-map-of-another-area" title="Permalink to this headline">¶</a></h1>
+<p>Here’s a challenge to test your PyGMT skills 🤹</p>
+<p>You’ll be processing a LiDAR point cloud of a different area 📍 from start to finish.</p>
+<p>Good luck! 🥳</p>
+<p>Feel free to find a dataset from an area you’re interested in using
+<a class="reference external" href="https://portal.opentopography.org/datasets">OpenTopography</a>.</p>
+<p>To make it easier though, I’ve provided an example for Queenstown, New Zealand 🇳🇿</p>
+<ul class="simple">
+<li><p>OpenTopography link: <a class="reference external" href="https://doi.org/10.5069/G9MP51G0">https://doi.org/10.5069/G9MP51G0</a></p></li>
+<li><p>Bulk download location: <a class="reference external" href="https://opentopography.s3.sdsc.edu/minio/pc-bulk/NZ21_Otago">https://opentopography.s3.sdsc.edu/minio/pc-bulk/NZ21_Otago</a></p></li>
+<li><p>Official 1m DSM from LINZ: <a class="reference external" href="https://data.linz.govt.nz/layer/105905-otago-queenstown-lidar-index-tiles-2021">https://data.linz.govt.nz/layer/105905-otago-queenstown-lidar-index-tiles-2021</a></p></li>
+</ul>
+<p>These files covers the Central Queenstown area:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0813.laz">https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0813.laz</a></p></li>
+<li><p><a class="reference external" href="https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0814.laz">https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0814.laz</a></p></li>
+<li><p><a class="reference external" href="https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0913.laz">https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0913.laz</a></p></li>
+<li><p><a class="reference external" href="https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0914.laz">https://opentopography.s3.sdsc.edu/pc-bulk/NZ21_Otago/CL2_CC11_2021_1000_0914.laz</a></p></li>
+</ul>
+<div class="section" id="download-and-load-data">
+<h2>Download and load data<a class="headerlink" href="#download-and-load-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># &quot;&quot;,</span>
+<span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>  <span class="c1"># Start an empty DataFrame</span>
+<span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="n">lazfile</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">fname</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">lazdata</span> <span class="o">=</span> <span class="n">laspy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">lazfile</span><span class="p">)</span>
+    <span class="n">temp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">scaled_array</span><span class="p">(),</span>
+            <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">scaled_array</span><span class="p">(),</span>
+            <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">scaled_array</span><span class="p">(),</span>
+            <span class="s2">&quot;classification&quot;</span><span class="p">:</span> <span class="n">lazdata</span><span class="o">.</span><span class="n">classification</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="c1"># load each point cloud into the DataFrame</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp_df</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="create-a-dsm">
+<h2>Create a DSM<a class="headerlink" href="#create-a-dsm" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run blockmedian</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run surface</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-dsm">
+<h2>Plot the DSM<a class="headerlink" href="#plot-the-dsm" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run grdimage</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run grdview</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s all 🎉!
+For more information on how to customize your map 🗺️,
+check out:</p>
+<ul class="simple">
+<li><p>Tutorials at <a class="reference external" href="https://www.pygmt.org/v0.6.1/tutorials/index.html">https://www.pygmt.org/v0.6.1/tutorials/index.html</a></p></li>
+<li><p>Gallery examples at <a class="reference external" href="https://www.pygmt.org/v0.6.1/gallery/index.html">https://www.pygmt.org/v0.6.1/gallery/index.html</a></p></li>
+</ul>
+<p>If you have any questions 🙋,
+feel free to visit the PyGMT forum at
+<a class="reference external" href="https://forum.generic-mapping-tools.org/c/questions/pygmt-q-a/11">https://forum.generic-mapping-tools.org/c/questions/pygmt-q-a/11</a>.</p>
+<p>Submit any ✨ feature requests/bug reports to the GitHub repo at
+<a class="reference external" href="https://github.com/GenericMappingTools/pygmt">https://github.com/GenericMappingTools/pygmt</a></p>
+<p>Cheers!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ecosystem.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Integration with the scientific Python ecosystem 🐍</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The PyGMT Team<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
+This content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
