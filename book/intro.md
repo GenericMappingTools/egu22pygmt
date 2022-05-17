@@ -5,7 +5,7 @@ for producing maps and doing geospatial data processing 🌍
 
 - [Anatomy of a PyGMT figure](first-figure) by [Leonardo Uieda](https://orcid.org/0000-0001-6123-9515)
 - [Integration with the scientific Python ecosystem 🐍](ecosystem) by [Max Jones](https://orcid.org/0000-0003-0180-8928)
-- [Making some Mars maps with pygmt](Mars_Maps) by [André Luiz Belém](https://orcid.org/0000-0002-8865-6180)
+- [Making some Mars maps with PyGMT](Mars_Maps) by [André Luiz Belém](https://orcid.org/0000-0002-8865-6180)
 - [LiDAR Point clouds to 3D surfaces ✨➡️🏔️](lidar_to_surface) by [Wei Ji Leong](https://orcid.org/0000-0003-2354-1988)
 
 

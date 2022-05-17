@@ -14,4 +14,5 @@ parts:
   chapters:
     - file: first-figure
     - file: ecosystem
+    - file: Mars_Maps
     - file: lidar_to_surface
