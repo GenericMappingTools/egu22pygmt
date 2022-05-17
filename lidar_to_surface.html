@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Integration with the scientific Python ecosystem 🐍" href="ecosystem.html" />
+    <link rel="prev" title="Making some Mars maps with PyGMT" href="Mars_Maps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -128,6 +128,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="ecosystem.html">
    Integration with the scientific Python ecosystem 🐍
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Mars_Maps.html">
+   Making some Mars maps with PyGMT
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -1386,7 +1391,7 @@ Coordinates:
   * y        (y) float64 5.427e+06 5.427e+06 5.427e+06 ... 5.428e+06 5.428e+06
 Attributes:
     long_name:     z
-    actual_range:  [ -1.83348048 192.18907166]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'z'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 721</li><li><span class='xr-has-index'>x</span>: 481</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-b4c37a2e-2790-4be5-8d72-abd64e5d7e50' class='xr-array-in' type='checkbox' checked><label for='section-b4c37a2e-2790-4be5-8d72-abd64e5d7e50' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>32.83 33.06 33.24 33.48 33.56 ... -0.732 -0.7083 -0.6869 -0.6937</span></div><div class='xr-array-data'><pre>array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
+    actual_range:  [ -1.83348048 192.18907166]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'z'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 721</li><li><span class='xr-has-index'>x</span>: 481</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-ec867f51-7cfd-47d6-933c-b7f086de25aa' class='xr-array-in' type='checkbox' checked><label for='section-ec867f51-7cfd-47d6-933c-b7f086de25aa' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>32.83 33.06 33.24 33.48 33.56 ... -0.732 -0.7083 -0.6869 -0.6937</span></div><div class='xr-array-data'><pre>array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
         179.47954   , 179.68286   ],
        [ 32.929073  ,  33.571014  ,  33.91027   , ..., 178.95854   ,
         179.3416    , 179.49734   ],
@@ -1398,7 +1403,7 @@ Attributes:
        [ -0.7150018 ,  -0.72270995,  -0.7585947 , ...,  -0.6843457 ,
          -0.68121314,  -0.6624484 ],
        [ -0.7903585 ,  -0.75000775,  -0.78331774, ...,  -0.70826954,
-         -0.68685687,  -0.6937212 ]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-d2fb8cd0-e18a-430e-8464-d5211cad904b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d2fb8cd0-e18a-430e-8464-d5211cad904b' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.75e+06 1.75e+06 ... 1.75e+06</div><input id='attrs-d9e2304f-a7e1-43d6-a67d-96c81a273403' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d9e2304f-a7e1-43d6-a67d-96c81a273403' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-029c7648-5a9b-4246-8387-44294e14a797' class='xr-var-data-in' type='checkbox'><label for='data-029c7648-5a9b-4246-8387-44294e14a797' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>x</dd><dt><span>actual_range :</span></dt><dd>[1749760. 1750240.]</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([1749760., 1749761., 1749762., ..., 1750238., 1750239., 1750240.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.427e+06 5.427e+06 ... 5.428e+06</div><input id='attrs-235e422f-bce1-404a-a034-5bd1108c7b82' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-235e422f-bce1-404a-a034-5bd1108c7b82' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-15c92b63-54fc-49be-8f79-480b055a1796' class='xr-var-data-in' type='checkbox'><label for='data-15c92b63-54fc-49be-8f79-480b055a1796' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>y</dd><dt><span>actual_range :</span></dt><dd>[5426880. 5427600.]</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([5426880., 5426881., 5426882., ..., 5427598., 5427599., 5427600.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f6c0108b-1c87-4755-9c34-62edce1cf4ba' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f6c0108b-1c87-4755-9c34-62edce1cf4ba' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>z</dd><dt><span>actual_range :</span></dt><dd>[ -1.83348048 192.18907166]</dd></dl></div></li></ul></div></div></div></div>
+         -0.68685687,  -0.6937212 ]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-ccf4a670-e9b7-4be2-bcaa-e72514d7c7cf' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ccf4a670-e9b7-4be2-bcaa-e72514d7c7cf' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.75e+06 1.75e+06 ... 1.75e+06</div><input id='attrs-70be90f6-b2b2-4320-b3d3-96a863221475' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-70be90f6-b2b2-4320-b3d3-96a863221475' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fe951b76-30d1-45e5-b592-aa16fce368ac' class='xr-var-data-in' type='checkbox'><label for='data-fe951b76-30d1-45e5-b592-aa16fce368ac' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>x</dd><dt><span>actual_range :</span></dt><dd>[1749760. 1750240.]</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([1749760., 1749761., 1749762., ..., 1750238., 1750239., 1750240.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.427e+06 5.427e+06 ... 5.428e+06</div><input id='attrs-7ac7966f-1de7-473e-b642-212352999fe1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7ac7966f-1de7-473e-b642-212352999fe1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e366e496-3b1c-488d-a511-c9899fc3dcff' class='xr-var-data-in' type='checkbox'><label for='data-e366e496-3b1c-488d-a511-c9899fc3dcff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>y</dd><dt><span>actual_range :</span></dt><dd>[5426880. 5427600.]</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([5426880., 5426881., 5426882., ..., 5427598., 5427599., 5427600.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-950c07b9-5f2f-4f92-b42c-8f5e90daf31c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-950c07b9-5f2f-4f92-b42c-8f5e90daf31c' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>z</dd><dt><span>actual_range :</span></dt><dd>[ -1.83348048 192.18907166]</dd></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 </div>
@@ -1682,11 +1687,11 @@ feel free to visit the PyGMT forum at
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ecosystem.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Mars_Maps.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Integration with the scientific Python ecosystem 🐍</p>
+            <p class="prev-next-title">Making some Mars maps with PyGMT</p>
         </div>
     </a>
 </div>

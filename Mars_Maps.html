@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🥳 Welcome to the EGU22 PyGMT short course &#8212; Crafting beautiful maps with PyGMT</title>
+    <title>Making some Mars maps with PyGMT &#8212; Crafting beautiful maps with PyGMT</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Anatomy of a PyGMT figure" href="first-figure.html" />
+    <link rel="next" title="LiDAR Point clouds to 3D surfaces ✨➡️🏔️" href="lidar_to_surface.html" />
+    <link rel="prev" title="Integration with the scientific Python ecosystem 🐍" href="ecosystem.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -91,8 +92,8 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    🥳 Welcome to the EGU22 PyGMT short course
   </a>
  </li>
@@ -119,7 +120,7 @@ const thebe_selector_output = ".output, .cell_output"
   🧑‍🏫 Tutorials
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="first-figure.html">
    Anatomy of a PyGMT figure
@@ -130,8 +131,8 @@ const thebe_selector_output = ".output, .cell_output"
    Integration with the scientific Python ecosystem 🐍
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Mars_Maps.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Making some Mars maps with PyGMT
   </a>
  </li>
@@ -184,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Mars_Maps.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -204,10 +205,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/GenericMappingTools/egu22pygmt/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/GenericMappingTools/egu22pygmt/issues/new?title=Issue%20on%20page%20%2FMars_Maps.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/GenericMappingTools/egu22pygmt/edit/main/book/intro.md"><button
+        <a class="edit-button" href="https://github.com/GenericMappingTools/egu22pygmt/edit/main/book/Mars_Maps.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -227,31 +228,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   🥳 Welcome to the EGU22 PyGMT short course
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickstart">
-   🌠 Quickstart
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-notebooks-locally">
-   💻 Running the notebooks locally
-  </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -259,126 +235,20 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>🥳 Welcome to the EGU22 PyGMT short course</h1>
+                <h1>Making some Mars maps with PyGMT</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   🥳 Welcome to the EGU22 PyGMT short course
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickstart">
-   🌠 Quickstart
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-notebooks-locally">
-   💻 Running the notebooks locally
-  </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-the-egu22-pygmt-short-course">
-<h1>🥳 Welcome to the EGU22 PyGMT short course<a class="headerlink" href="#welcome-to-the-egu22-pygmt-short-course" title="Permalink to this headline">¶</a></h1>
-<p>This Jupyter book contains <a class="reference external" href="https://www.pygmt.org/v0.6.1">PyGMT</a> tutorials
-for producing maps and doing geospatial data processing 🌍</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="first-figure.html"><span class="doc std std-doc">Anatomy of a PyGMT figure</span></a> by <a class="reference external" href="https://orcid.org/0000-0001-6123-9515">Leonardo Uieda</a></p></li>
-<li><p><a class="reference internal" href="ecosystem.html"><span class="doc std std-doc">Integration with the scientific Python ecosystem 🐍</span></a> by <a class="reference external" href="https://orcid.org/0000-0003-0180-8928">Max Jones</a></p></li>
-<li><p><a class="reference internal" href="Mars_Maps.html"><span class="doc std std-doc">Making some Mars maps with PyGMT</span></a> by <a class="reference external" href="https://orcid.org/0000-0002-8865-6180">André Luiz Belém</a></p></li>
-<li><p><a class="reference internal" href="lidar_to_surface.html"><span class="doc std std-doc">LiDAR Point clouds to 3D surfaces ✨➡️🏔️</span></a> by <a class="reference external" href="https://orcid.org/0000-0003-2354-1988">Wei Ji Leong</a></p></li>
-</ul>
-<p>Each tutorial is rendered on this website for easy viewing 👀, but they are all
-Jupyter notebooks designed to be ran interactively 💫. See the instructions
-below on how you can start running the tutorials in no time! 🚀</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="quickstart">
-<h1>🌠 Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>To run these notebooks in an interactive Jupyter session online,
-🖱️ click on the button below to launch on regular
-<a class="reference external" href="https://mybinder.readthedocs.io/en/latest/index.html">Binder</a>.</p>
-<p><a class="reference external" href="https://mybinder.org/v2/gh/GenericMappingTools/egu22pygmt/main"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>Alternatively, you can go to a specific tutorial page, hover over the rocket 🚀
-icon on the top right, and click ‘Binder’.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="running-the-notebooks-locally">
-<h1>💻 Running the notebooks locally<a class="headerlink" href="#running-the-notebooks-locally" title="Permalink to this headline">¶</a></h1>
-<p>If you prefer to run the 🧑‍🏫 tutorials with a local installation of PyGMT, then
-follow along! For this EGU22 short course, we recommend creating a virtual
-conda environment and installing the 🐍 Python libraries inside.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For users comfortable with using <code class="docutils literal notranslate"><span class="pre">git</span></code>, feel free to ⬇️ download or
-clone the repository containing the short course materials directly using
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/GenericMappingTools/egu22pygmt.git</span></code></p>
-</div>
-<p>Here’s the instructions to install the <code class="docutils literal notranslate"><span class="pre">egu22pygmt</span></code> environment:</p>
-<ol>
-<li><p>Ensure that you have the
-<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/index.html"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a>
-package manager installed (e.g. via
-<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><code class="docutils literal notranslate"><span class="pre">miniconda</span></code></a> or
-<a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda</a>).
-You can also use <a class="reference external" href="https://mamba.readthedocs.io/en/latest/installation.html#fresh-install"><code class="docutils literal notranslate"><span class="pre">mamba</span></code></a>
-which tends to be a ⚡ faster alternative.</p></li>
-<li><p>Make a folder called ‘egu22pygmt’. This will be where you will put all the
-Jupyter notebooks and data files 🗃️ used in the short course.</p></li>
-<li><p>Download a copy of the ‘environment.yml’ file which contains a 📄 list of
-dependencies required to run the tutorials in this short course. Get it at
-<a class="reference external" href="https://github.com/GenericMappingTools/egu22pygmt/blob/main/environment.yml">https://github.com/GenericMappingTools/egu22pygmt/blob/main/environment.yml</a>.</p></li>
-<li><p>Run the following commands on the 🧑‍💻 command-line to create the virtual
-environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/egu22pygmt
-conda create --name egu22pygmt --file environment.yml
-</pre></div>
-</div>
-</li>
-<li><p>Once the installation is completed 🏁, launch
-<a class="reference external" href="https://jupyterlab.readthedocs.io">Jupyter Lab</a> as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate egu22pygmt
-jupyter lab
-</pre></div>
-</div>
-<p>This should open up a page in your default browser. If not, you can click
-and open the 🔗 link that says <code class="docutils literal notranslate"><span class="pre">http://localhost:8888/lab?token=...</span></code> in your
-command-line terminal and this will will take you to the Jupyter Lab page.</p>
-</li>
-<li><p>Download the Jupyter notebook(s) you want to run (e.g.
-<a class="reference external" href="https://www.generic-mapping-tools.org/egu22pygmt/first-figure.html">https://www.generic-mapping-tools.org/egu22pygmt/first-figure.html</a>) using
-either the download button on the ↗️ top right (select ‘.ipynb’) or from
-GitHub at <a class="reference external" href="https://github.com/GenericMappingTools/egu22pygmt/tree/main/book">https://github.com/GenericMappingTools/egu22pygmt/tree/main/book</a>.
-Make sure to put the *.ipynb file(s) inside of the ‘egu22pygmt’ folder.</p></li>
-<li><p>Open the Jupyter notebook in the left-pane file browser, e.g. by
-🖱️ double-clicking on <code class="docutils literal notranslate"><span class="pre">first-figure.ipynb</span></code>. You are now ready to run through
-the course materials 🎉!</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you’re intending to use PyGMT in another project outside of this course,
-please follow the official installation instructions at
-<a class="reference external" href="https://www.pygmt.org/latest/install.html">https://www.pygmt.org/latest/install.html</a></p>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="making-some-mars-maps-with-pygmt">
+<h1>Making some Mars maps with PyGMT<a class="headerlink" href="#making-some-mars-maps-with-pygmt" title="Permalink to this headline">¶</a></h1>
+<p>TODO</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -405,11 +275,18 @@ please follow the official installation instructions at
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="first-figure.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ecosystem.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Integration with the scientific Python ecosystem 🐍</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="lidar_to_surface.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Anatomy of a PyGMT figure</p>
+        <p class="prev-next-title"><strong>LiDAR Point clouds to 3D surfaces</strong> ✨➡️🏔️</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
