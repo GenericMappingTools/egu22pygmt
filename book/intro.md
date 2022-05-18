@@ -31,7 +31,7 @@ by [Max Jones](https://orcid.org/0000-0003-0180-8928)
 :text: Making some Mars maps with PyGMT
 :type: ref
 ```
-by [André Luiz Belém](https://orcid.org/0000-0002-8865-6180)
+by [André Belém](https://orcid.org/0000-0002-8865-6180)
 
 ---
 :img-top: _images/lidar_to_surface_36_0.png
