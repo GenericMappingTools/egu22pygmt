@@ -22,7 +22,7 @@ bibtex_bibfiles:
 # Launch button settings
 launch_buttons:
   notebook_interface: jupyterlab
-  binderhub_url: https://mybinder.org
+  binderhub_url: https://gke.mybinder.org
 
 # Information about where the book exists on the web
 repository:

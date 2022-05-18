@@ -53,7 +53,7 @@ To run these notebooks in an interactive Jupyter session online,
 🖱️ click on the button below to launch on regular
 [Binder](https://mybinder.readthedocs.io/en/latest/index.html).
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GenericMappingTools/egu22pygmt/main)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://gke.mybinder.org/v2/gh/GenericMappingTools/egu22pygmt/main)
 
 Alternatively, you can go to a specific tutorial page, hover over the rocket 🚀
 icon on the top right, and click 'Binder'.
