@@ -91,7 +91,7 @@ Here's the instructions to install the `egu22pygmt` environment:
 
     ```bash
     cd /path/to/egu22pygmt
-    conda create --name egu22pygmt --file environment.yml
+    conda env create --name egu22pygmt --file environment.yml
     ```
 
 5. Once the installation is completed 🏁, launch
