@@ -3,11 +3,43 @@
 This Jupyter book contains [PyGMT](https://www.pygmt.org/v0.6.1) tutorials
 for producing maps and doing geospatial data processing 🌍
 
-- [Anatomy of a PyGMT figure](first-figure) by [Leonardo Uieda](https://orcid.org/0000-0001-6123-9515)
-- [Integration with the scientific Python ecosystem 🐍](ecosystem) by [Max Jones](https://orcid.org/0000-0003-0180-8928)
-- [Making some Mars maps with PyGMT](Mars_Maps) by [André Luiz Belém](https://orcid.org/0000-0002-8865-6180)
-- [LiDAR Point clouds to 3D surfaces ✨➡️🏔️](lidar_to_surface) by [Wei Ji Leong](https://orcid.org/0000-0003-2354-1988)
+````{panels}
+:column: col-3 align-items-center p-2
+:body: text-center
 
+---
+:img-top: ./_build/html/_images/first-figure_49_0.png
+```{link-button} first-figure
+:text: Anatomy of a PyGMT figure
+:type: ref
+```
+by [Leonardo Uieda](https://orcid.org/0000-0001-6123-9515)
+
+---
+:img-top: ./_build/html/_images/ecosystem_13_1.png
+```{link-button} ecosystem
+:text: Integration with the scientific Python ecosystem 🐍
+:type: ref
+```
+by [Max Jones](https://orcid.org/0000-0003-0180-8928)
+
+---
+:img-top: https://user-images.githubusercontent.com/23487320/168939109-e35c9d85-4b2d-4623-abd8-66ed1148cf21.png
+```{link-button} Mars_Maps
+:text: Making some Mars maps with PyGMT
+:type: ref
+```
+by [André L. Belém](https://orcid.org/0000-0002-8865-6180)
+
+---
+:img-top: ./_build/html/_images/lidar_to_surface_36_0.png
+```{link-button} ecosystem
+:text: LiDAR Point clouds to 3D surfaces ✨➡️🏔
+:type: ref
+```
+by [Wei Ji Leong](https://orcid.org/0000-0003-2354-1988)
+
+````
 
 Each tutorial is rendered on this website for easy viewing 👀, but they are all
 Jupyter notebooks designed to be ran interactively 💫. See the instructions
