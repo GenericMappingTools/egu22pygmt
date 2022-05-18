@@ -16,4 +16,4 @@ dependencies:
   - laspy=2.1.2
   - rioxarray=0.11.1
   - pip:
-    - lazrs==0.4.1
+    - lazrs==0.4.0
