@@ -1,4 +1,6 @@
-# 🥳 Welcome to the EGU22 PyGMT short course
+# Crafting beautiful maps with PyGMT
+
+## 🥳 Welcome to the EGU22 PyGMT short course
 
 This Jupyter book contains [PyGMT](https://www.pygmt.org/v0.6.1) tutorials
 for producing maps and doing geospatial data processing 🌍
@@ -89,7 +91,7 @@ Here's the instructions to install the `egu22pygmt` environment:
 
     ```bash
     cd /path/to/egu22pygmt
-    conda create --name egu22pygmt --file environment.yml
+    conda env create --name egu22pygmt --file environment.yml
     ```
 
 5. Once the installation is completed 🏁, launch
