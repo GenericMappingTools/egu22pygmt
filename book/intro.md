@@ -8,7 +8,7 @@ for producing maps and doing geospatial data processing 🌍
 :body: text-center
 
 ---
-:img-top: ./_build/html/_images/first-figure_49_0.png
+:img-top: _images/first-figure_49_0.png
 ```{link-button} first-figure
 :text: Anatomy of a PyGMT figure
 :type: ref
@@ -16,7 +16,7 @@ for producing maps and doing geospatial data processing 🌍
 by [Leonardo Uieda](https://orcid.org/0000-0001-6123-9515)
 
 ---
-:img-top: ./_build/html/_images/ecosystem_13_1.png
+:img-top: _images/ecosystem_13_1.png
 ```{link-button} ecosystem
 :text: Integration with the scientific Python ecosystem 🐍
 :type: ref
@@ -32,7 +32,7 @@ by [Max Jones](https://orcid.org/0000-0003-0180-8928)
 by [André L. Belém](https://orcid.org/0000-0002-8865-6180)
 
 ---
-:img-top: ./_build/html/_images/lidar_to_surface_36_0.png
+:img-top: _images/lidar_to_surface_36_0.png
 ```{link-button} ecosystem
 :text: LiDAR Point clouds to 3D surfaces ✨➡️🏔
 :type: ref
