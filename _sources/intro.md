@@ -29,11 +29,11 @@ by [Max Jones](https://orcid.org/0000-0003-0180-8928)
 :text: Making some Mars maps with PyGMT
 :type: ref
 ```
-by [André L. Belém](https://orcid.org/0000-0002-8865-6180)
+by [André Luiz Belém](https://orcid.org/0000-0002-8865-6180)
 
 ---
 :img-top: _images/lidar_to_surface_36_0.png
-```{link-button} ecosystem
+```{link-button} lidar_to_surface
 :text: LiDAR Point clouds to 3D surfaces ✨➡️🏔
 :type: ref
 ```
