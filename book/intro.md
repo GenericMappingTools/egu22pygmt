@@ -1,4 +1,6 @@
-# 🥳 Welcome to the EGU22 PyGMT short course
+# Crafting beautiful maps with PyGMT
+
+## 🥳 Welcome to the EGU22 PyGMT short course
 
 This Jupyter book contains [PyGMT](https://www.pygmt.org/v0.6.1) tutorials
 for producing maps and doing geospatial data processing 🌍
