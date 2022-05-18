@@ -9,7 +9,7 @@ short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 **Conveners**:
 - [Wei Ji Leong](https://github.com/weiji14)
 - [Leonardo Uieda](https://github.com/leouieda)
-- [Meghan Jones](https://github.com/meghanrjones)
+- [Max Jones](https://github.com/meghanrjones)
 - [Andre Belem](https://github.com/andrebelem)
 
 **When**:
