@@ -24,11 +24,11 @@ short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 
 |  Time (UTC) | Event                                                 |
 |:------------|:------------------------------------------------------|
-| 13:10-13:20 | Introduction                                          |
-| 13:20-13.40 | Anatomy of a PyGMT figure                             |
-| 13:40-14.00 | Integration with the scientific Python ecosystem      |
-| 14:00-14.20 | Making some Mars maps with pygmt                      |
-| 14:20-14.40 | LiDAR Point clouds to 3D surfaces                     |
+| 13:10-13:17 | Introduction                                          |
+| 13:17-13.39 | Anatomy of a PyGMT figure                             |
+| 13:39-13.55 | Integration with the scientific Python ecosystem      |
+| 13:55-14.15 | Making some Mars maps with pygmt                      |
+| 14:15-14.40 | LiDAR Point clouds to 3D surfaces                     |
 
 ## Getting started
 
