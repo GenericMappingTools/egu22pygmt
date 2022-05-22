@@ -58,6 +58,14 @@ To run these notebooks in an interactive Jupyter session online,
 Alternatively, you can go to a specific tutorial page, hover over the rocket 🚀
 icon on the top right, and click 'Binder'.
 
+:::{note}
+If you see an error like `toomanyrequests: You have reached your pull rate
+limit`, you can try this Pangeo Binder link instead as a backup, though it
+will require a [GitHub account](https://github.com/signup) to work:
+
+[![Pangeo Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/GenericMappingTools/egu22pygmt/main)
+:::
+
 # 💻 Running the notebooks locally
 
 If you prefer to run the 🧑‍🏫 tutorials with a local installation of PyGMT, then
