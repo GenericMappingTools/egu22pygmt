@@ -13,3 +13,6 @@ parts:
     - file: first-figure
     - file: ecosystem
     - file: lidar_to_surface
+    - file: maps_maps
+      sections:
+      - file: mars_maps_extended
