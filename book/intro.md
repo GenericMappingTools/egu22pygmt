@@ -26,7 +26,7 @@ by [Leonardo Uieda](https://orcid.org/0000-0001-6123-9515)
 by [Max Jones](https://orcid.org/0000-0003-0180-8928)
 
 ---
-:img-top: https://user-images.githubusercontent.com/23487320/168939109-e35c9d85-4b2d-4623-abd8-66ed1148cf21.png
+:img-top: _images/mars_maps_11_0.png
 ```{link-button} Mars_Maps
 :text: Making some Mars maps with PyGMT
 :type: ref
