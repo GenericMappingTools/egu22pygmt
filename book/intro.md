@@ -27,7 +27,7 @@ by [Max Jones](https://orcid.org/0000-0003-0180-8928)
 
 ---
 :img-top: _images/mars_maps_11_0.png
-```{link-button} Mars_Maps
+```{link-button} mars_maps
 :text: Making some Mars maps with PyGMT
 :type: ref
 ```
