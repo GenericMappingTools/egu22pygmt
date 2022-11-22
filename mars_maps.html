@@ -359,6 +359,7 @@ const thebe_selector_output = ".output, .cell_output"
 }
 
 html[theme=dark],
+body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -588,6 +589,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -609,14 +615,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -626,13 +634,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -670,7 +681,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -688,9 +700,19 @@ Data variables:
     alt        (latitude, longitude) int16 ...
 Attributes:
     title:    MOLA Topography - 32 pixels/degree
-    history:  Built from original MOLA file megt90n000fb.img</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-f7d839b9-7ae8-4be2-8a86-28c144a75878' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f7d839b9-7ae8-4be2-8a86-28c144a75878' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>latitude</span>: 5760</li><li><span class='xr-has-index'>longitude</span>: 11520</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-2c6a9706-6ff5-460f-a625-a7be6a728179' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2c6a9706-6ff5-460f-a625-a7be6a728179' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>89.98 89.95 89.92 ... -89.95 -89.98</div><input id='attrs-2fcae514-9204-4de1-89e1-544db9ba63b7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2fcae514-9204-4de1-89e1-544db9ba63b7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fbd99adc-54a4-4c57-96f3-82017129d6b4' class='xr-var-data-in' type='checkbox'><label for='data-fbd99adc-54a4-4c57-96f3-82017129d6b4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>North latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([ 89.984375,  89.953125,  89.921875, ..., -89.921875, -89.953125,
-       -89.984375], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.01562 0.04688 ... 360.0 360.0</div><input id='attrs-2baebc72-d613-4040-8637-71c3245125d0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2baebc72-d613-4040-8637-71c3245125d0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cf67982d-db86-49b5-b311-5251c039c1d3' class='xr-var-data-in' type='checkbox'><label for='data-cf67982d-db86-49b5-b311-5251c039c1d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>East longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([1.562500e-02, 4.687500e-02, 7.812500e-02, ..., 3.599219e+02,
-       3.599531e+02, 3.599844e+02], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e8ea7a2a-adbb-4cf6-8e15-fbe47796ca98' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e8ea7a2a-adbb-4cf6-8e15-fbe47796ca98' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(latitude, longitude)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-33cf417f-fd49-43ae-86ed-6bf700bcc753' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-33cf417f-fd49-43ae-86ed-6bf700bcc753' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-992b3b11-b270-4dca-bbf9-4fcd3d3c567d' class='xr-var-data-in' type='checkbox'><label for='data-992b3b11-b270-4dca-bbf9-4fcd3d3c567d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>MOLA topography</dd><dt><span>units :</span></dt><dd>meters</dd></dl></div><div class='xr-var-data'><pre>[66355200 values with dtype=int16]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-45c802ec-ea32-44d1-bacf-f6692b0ca560' class='xr-section-summary-in' type='checkbox'  checked><label for='section-45c802ec-ea32-44d1-bacf-f6692b0ca560' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>MOLA Topography - 32 pixels/degree</dd><dt><span>history :</span></dt><dd>Built from original MOLA file megt90n000fb.img</dd></dl></div></li></ul></div></div></div></div>
+    history:  Built from original MOLA file megt90n000fb.img</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-f115e127-f2e2-4b58-a46b-8ed6e450ae3b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f115e127-f2e2-4b58-a46b-8ed6e450ae3b' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>latitude</span>: 5760</li><li><span class='xr-has-index'>longitude</span>: 11520</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-bf3cbaf5-0c79-41c4-9683-21c18009fb51' class='xr-section-summary-in' type='checkbox'  checked><label for='section-bf3cbaf5-0c79-41c4-9683-21c18009fb51' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>89.98 89.95 89.92 ... -89.95 -89.98</div><input id='attrs-5fbe2b0f-5354-4c91-91f1-3c589c375d5f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5fbe2b0f-5354-4c91-91f1-3c589c375d5f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-95415204-5de5-4424-8233-b9e5133042bf' class='xr-var-data-in' type='checkbox'><label for='data-95415204-5de5-4424-8233-b9e5133042bf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>North latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([ 89.984375,  89.953125,  89.921875, ..., -89.921875, -89.953125,
+       -89.984375], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.01562 0.04688 ... 360.0 360.0</div><input id='attrs-04d4bffb-e0b5-46d1-bf74-7202892d05c5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-04d4bffb-e0b5-46d1-bf74-7202892d05c5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-81d980f5-8639-4533-9c56-af97045c90d8' class='xr-var-data-in' type='checkbox'><label for='data-81d980f5-8639-4533-9c56-af97045c90d8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>East longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([1.562500e-02, 4.687500e-02, 7.812500e-02, ..., 3.599219e+02,
+       3.599531e+02, 3.599844e+02], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f164e34d-7757-49e8-9c1e-4d7d8aa96ee4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f164e34d-7757-49e8-9c1e-4d7d8aa96ee4' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(latitude, longitude)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1ad8de2c-21ba-4dbf-842e-38280cb33d8b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1ad8de2c-21ba-4dbf-842e-38280cb33d8b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-77cdd166-42e8-4b6d-810e-07c16ace3c2f' class='xr-var-data-in' type='checkbox'><label for='data-77cdd166-42e8-4b6d-810e-07c16ace3c2f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>MOLA topography</dd><dt><span>units :</span></dt><dd>meters</dd></dl></div><div class='xr-var-data'><pre>[66355200 values with dtype=int16]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-652ea1ba-1523-4ee0-ac1b-391eaa96d0ed' class='xr-section-summary-in' type='checkbox'  ><label for='section-652ea1ba-1523-4ee0-ac1b-391eaa96d0ed' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>latitude</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-394a448a-cc8a-4e2c-acc0-94b582253638' class='xr-index-data-in' type='checkbox'/><label for='index-394a448a-cc8a-4e2c-acc0-94b582253638' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([ 89.984375,  89.953125,  89.921875,  89.890625,  89.859375,
+               89.828125,  89.796875,  89.765625,  89.734375,  89.703125,
+              ...
+              -89.703125, -89.734375, -89.765625, -89.796875, -89.828125,
+              -89.859375, -89.890625, -89.921875, -89.953125, -89.984375],
+             dtype=&#x27;float64&#x27;, name=&#x27;latitude&#x27;, length=5760))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>longitude</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-b5385c5a-6ff4-4c1e-8567-8dbbe24121da' class='xr-index-data-in' type='checkbox'/><label for='index-b5385c5a-6ff4-4c1e-8567-8dbbe24121da' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([  0.015625,   0.046875,   0.078125,   0.109375,   0.140625,
+                0.171875,   0.203125,   0.234375,   0.265625,   0.296875,
+              ...
+              359.703125, 359.734375, 359.765625, 359.796875, 359.828125,
+              359.859375, 359.890625, 359.921875, 359.953125, 359.984375],
+             dtype=&#x27;float64&#x27;, name=&#x27;longitude&#x27;, length=11520))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-142cd61b-b9ab-4637-9f9d-8b0fbad17c65' class='xr-section-summary-in' type='checkbox'  checked><label for='section-142cd61b-b9ab-4637-9f9d-8b0fbad17c65' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>MOLA Topography - 32 pixels/degree</dd><dt><span>history :</span></dt><dd>Built from original MOLA file megt90n000fb.img</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Just like any other notebook with pygmt, we import the library and manipulate other data. To make a map of the entire Martian surface without a lot of time and memory, let’s reduce the resolution using <code class="docutils literal notranslate"><span class="pre">grdsample</span></code>. We also take the opportunity to transform an <code class="docutils literal notranslate"><span class="pre">alt</span></code> variable into a <code class="docutils literal notranslate"><span class="pre">float</span></code> to be used in maps.</p>
 <div class="cell docutils container">
@@ -745,7 +767,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f4a4c794df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f2840591c70&gt;
 </pre></div>
 </div>
 <img alt="_images/mars_maps_9_1.png" src="_images/mars_maps_9_1.png" />

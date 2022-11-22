@@ -1055,6 +1055,7 @@ with each pixel’s elevation (🇿 value in metres) stored at every 🇽 and �
 }
 
 html[theme=dark],
+body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -1284,6 +1285,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -1305,14 +1311,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -1322,13 +1330,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -1366,7 +1377,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -1394,7 +1406,7 @@ Coordinates:
   * y        (y) float64 5.427e+06 5.427e+06 5.427e+06 ... 5.428e+06 5.428e+06
 Attributes:
     long_name:     z
-    actual_range:  [ -1.83348048 192.18907166]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'z'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 721</li><li><span class='xr-has-index'>x</span>: 481</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-907bb169-e9be-4e95-b894-fca9e8bcf193' class='xr-array-in' type='checkbox' checked><label for='section-907bb169-e9be-4e95-b894-fca9e8bcf193' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>32.83 33.06 33.24 33.48 33.56 ... -0.732 -0.7083 -0.6869 -0.6937</span></div><div class='xr-array-data'><pre>array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
+    actual_range:  [ -1.83348048 192.18907166]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'z'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 721</li><li><span class='xr-has-index'>x</span>: 481</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-12a91a07-d741-4ddd-b552-381427cd5031' class='xr-array-in' type='checkbox' checked><label for='section-12a91a07-d741-4ddd-b552-381427cd5031' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>32.83 33.06 33.24 33.48 33.56 ... -0.732 -0.7083 -0.6869 -0.6937</span></div><div class='xr-array-data'><pre>array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
         179.47954   , 179.68286   ],
        [ 32.929073  ,  33.571014  ,  33.91027   , ..., 178.95854   ,
         179.3416    , 179.49734   ],
@@ -1406,7 +1418,17 @@ Attributes:
        [ -0.7150018 ,  -0.72270995,  -0.7585947 , ...,  -0.6843457 ,
          -0.68121314,  -0.6624484 ],
        [ -0.7903585 ,  -0.75000775,  -0.78331774, ...,  -0.70826954,
-         -0.68685687,  -0.6937212 ]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-b8b147fb-4d77-4095-8973-0498a7a89d56' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b8b147fb-4d77-4095-8973-0498a7a89d56' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.75e+06 1.75e+06 ... 1.75e+06</div><input id='attrs-3eec72c1-32f3-4b3a-b89c-743a1f6fb55b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3eec72c1-32f3-4b3a-b89c-743a1f6fb55b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a3d2f798-a70b-4591-a18b-72e76dbf1a37' class='xr-var-data-in' type='checkbox'><label for='data-a3d2f798-a70b-4591-a18b-72e76dbf1a37' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>x</dd><dt><span>actual_range :</span></dt><dd>[1749760. 1750240.]</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([1749760., 1749761., 1749762., ..., 1750238., 1750239., 1750240.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.427e+06 5.427e+06 ... 5.428e+06</div><input id='attrs-66776058-4d81-4724-9a0e-85102f7d50e2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-66776058-4d81-4724-9a0e-85102f7d50e2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dd4141a0-1f0b-4efd-ba4f-52d409447c16' class='xr-var-data-in' type='checkbox'><label for='data-dd4141a0-1f0b-4efd-ba4f-52d409447c16' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>y</dd><dt><span>actual_range :</span></dt><dd>[5426880. 5427600.]</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([5426880., 5426881., 5426882., ..., 5427598., 5427599., 5427600.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c6fceb69-935b-4a4d-9efa-01513f72a06a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c6fceb69-935b-4a4d-9efa-01513f72a06a' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>z</dd><dt><span>actual_range :</span></dt><dd>[ -1.83348048 192.18907166]</dd></dl></div></li></ul></div></div></div></div>
+         -0.68685687,  -0.6937212 ]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-96a2b97f-4371-4b5b-b512-1bb37c723705' class='xr-section-summary-in' type='checkbox'  checked><label for='section-96a2b97f-4371-4b5b-b512-1bb37c723705' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.75e+06 1.75e+06 ... 1.75e+06</div><input id='attrs-0b09bcee-5299-434a-a2f7-7de817f8d688' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0b09bcee-5299-434a-a2f7-7de817f8d688' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1cc76c0d-310a-4e33-b807-692d0a233d1c' class='xr-var-data-in' type='checkbox'><label for='data-1cc76c0d-310a-4e33-b807-692d0a233d1c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>x</dd><dt><span>actual_range :</span></dt><dd>[1749760. 1750240.]</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([1749760., 1749761., 1749762., ..., 1750238., 1750239., 1750240.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.427e+06 5.427e+06 ... 5.428e+06</div><input id='attrs-e143846d-7489-4f5e-a70c-4c714919a594' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e143846d-7489-4f5e-a70c-4c714919a594' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-38739378-d04c-4758-992a-dcbd69083e56' class='xr-var-data-in' type='checkbox'><label for='data-38739378-d04c-4758-992a-dcbd69083e56' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>y</dd><dt><span>actual_range :</span></dt><dd>[5426880. 5427600.]</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([5426880., 5426881., 5426882., ..., 5427598., 5427599., 5427600.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f1542d8a-91c3-4af2-b5cc-2614ae901295' class='xr-section-summary-in' type='checkbox'  ><label for='section-f1542d8a-91c3-4af2-b5cc-2614ae901295' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-d8b14899-c2ed-432c-9fdf-d5e231f034da' class='xr-index-data-in' type='checkbox'/><label for='index-d8b14899-c2ed-432c-9fdf-d5e231f034da' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([1749760.0, 1749761.0, 1749762.0, 1749763.0, 1749764.0, 1749765.0,
+              1749766.0, 1749767.0, 1749768.0, 1749769.0,
+              ...
+              1750231.0, 1750232.0, 1750233.0, 1750234.0, 1750235.0, 1750236.0,
+              1750237.0, 1750238.0, 1750239.0, 1750240.0],
+             dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=481))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-baeca25b-174d-4814-a1d7-84b950c49916' class='xr-index-data-in' type='checkbox'/><label for='index-baeca25b-174d-4814-a1d7-84b950c49916' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([5426880.0, 5426881.0, 5426882.0, 5426883.0, 5426884.0, 5426885.0,
+              5426886.0, 5426887.0, 5426888.0, 5426889.0,
+              ...
+              5427591.0, 5427592.0, 5427593.0, 5427594.0, 5427595.0, 5427596.0,
+              5427597.0, 5427598.0, 5427599.0, 5427600.0],
+             dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=721))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-881657aa-90e0-4c5f-bd80-85dcbad6da26' class='xr-section-summary-in' type='checkbox'  checked><label for='section-881657aa-90e0-4c5f-bd80-85dcbad6da26' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>z</dd><dt><span>actual_range :</span></dt><dd>[ -1.83348048 192.18907166]</dd></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 </div>
