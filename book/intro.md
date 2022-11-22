@@ -47,6 +47,12 @@ Each tutorial is rendered on this website for easy viewing 👀, but they are al
 Jupyter notebooks designed to be ran interactively 💫. See the instructions
 below on how you can start running the tutorials in no time! 🚀
 
+# Recording
+
+A recording of the full short course is available on YouTube:
+
+[![YouTube Playlist](https://img.youtube.com/vi/Dgf6ijduNoE/0.jpg)](https://youtube.com/playlist?list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG)
+
 # 🌠 Quickstart
 
 To run these notebooks in an interactive Jupyter session online,

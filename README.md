@@ -6,6 +6,12 @@
 Material for the [PyGMT](https://github.com/GenericMappingTools/pygmt)
 short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 
+**Recording**:
+
+A recording of the full short course is available on YouTube:
+
+[![YouTube Playlist](https://img.youtube.com/vi/Dgf6ijduNoE/0.jpg)](https://youtube.com/playlist?list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG)
+
 **Conveners**:
 - [Wei Ji Leong](https://github.com/weiji14)
 - [Leonardo Uieda](https://github.com/leouieda)
