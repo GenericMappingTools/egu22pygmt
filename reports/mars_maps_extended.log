@@ -35,7 +35,7 @@ File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xa
 [0;32m---> 56[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     57[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/home/runner/work/egu22pygmt/egu22pygmt/book/mola32.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'b1f37f79-c188-44d5-a86b-79170e1aac92']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/home/runner/work/egu22pygmt/egu22pygmt/book/mola32.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '8cc09da8-2b63-4eea-ac45-1513bd6b58fa']
 
 During handling of the above exception, another exception occurred:
 
@@ -121,7 +121,7 @@ File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/contextlib.py:11
 [1;32m    118[0m [38;5;28;01mtry[39;00m:
 [0;32m--> 119[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mnext[39;49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mgen[49m[43m)[49m
 [1;32m    120[0m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m:
-[1;32m    121[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124m"[39m[38;5;124mgenerator didn[39m[38;5;124m'[39m[38;5;124mt yield[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m [38;5;28mNone[39m
+[1;32m    121[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124m"[39m[38;5;124mgenerator didn[39m[38;5;124m'[39m[38;5;124mt yield[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m [38;5;28;01mNone[39;00m
 
 File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/backends/file_manager.py:198[0m, in [0;36mCachingFileManager.acquire_context[0;34m(self, needs_lock)[0m
 [1;32m    195[0m [38;5;129m@contextlib[39m[38;5;241m.[39mcontextmanager

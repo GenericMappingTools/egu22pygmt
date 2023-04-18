@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="ne">---&gt; </span><span class="mi">56</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/home/runner/work/egu22pygmt/egu22pygmt/book/mola32.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;d85c0b00-e706-4de0-9743-3097f89a064f&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/home/runner/work/egu22pygmt/egu22pygmt/book/mola32.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;a35790ca-f6de-41bd-af70-6130f4dd6705&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -426,7 +426,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">119</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;generator didn&#39;t yield&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;generator didn&#39;t yield&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
 <span class="nn">File /usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/backends/file_manager.py:198,</span> in <span class="ni">CachingFileManager.acquire_context</span><span class="nt">(self, needs_lock)</span>
 <span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
