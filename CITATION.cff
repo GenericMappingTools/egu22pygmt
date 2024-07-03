@@ -1,12 +1,11 @@
 # This CITATION.cff file was generated with cffinit.
-# Visit https://bit.ly/cffinit to generate yours today!
+# Visit https://citation-file-format.github.io to generate yours today!
 
 cff-version: 1.2.0
 title: Crafting beautiful maps with PyGMT
 message: >-
   If you use this short course, please cite it as
   below.
-type: software
 authors:
   - given-names: Wei Ji
     family-names: Leong
@@ -24,7 +23,10 @@ authors:
     family-names: Belém
     affiliation: 'Universidade Federal Fluminense, Brazil'
     orcid: 'https://orcid.org/0000-0002-8865-6180'
-repository-code: 'https://github.com/GenericMappingTools/egu22pygmt'
-url: 'https://www.generic-mapping-tools.org/egu22pygmt'
-license: CC-BY-4.0
 date-released: '2022-05-24'
+doi: 10.5281/zenodo.1003149
+license: CC-BY-4.0
+repository-code: 'https://github.com/GenericMappingTools/egu22pygmt'
+type: software
+url: 'https://www.generic-mapping-tools.org/egu22pygmt'
+version: 1.0.0
