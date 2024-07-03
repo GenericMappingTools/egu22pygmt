@@ -26,6 +26,10 @@ authors:
 date-released: '2022-05-24'
 doi: 10.5281/zenodo.1003149
 license: CC-BY-4.0
+references:
+  - conference:
+      name: "EGU General Assembly 2022"
+      country: AT
 repository-code: 'https://github.com/GenericMappingTools/egu22pygmt'
 type: software
 url: 'https://www.generic-mapping-tools.org/egu22pygmt'
