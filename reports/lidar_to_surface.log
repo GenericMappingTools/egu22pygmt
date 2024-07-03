@@ -60,39 +60,38 @@ File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/ri
 [1;32m    253[0m [38;5;28;01mif[39;00m data[38;5;241m.[39mndim [38;5;241m==[39m [38;5;241m2[39m:
 [1;32m    254[0m     rds[38;5;241m.[39mwrite(data, [38;5;241m1[39m, window[38;5;241m=[39mwindow)
 
-File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/conventions.py:296[0m, in [0;36mencode_cf_variable[0;34m(var, needs_copy, name)[0m
-[1;32m    287[0m ensure_not_multiindex(var, name[38;5;241m=[39mname)
-[1;32m    289[0m [38;5;28;01mfor[39;00m coder [38;5;129;01min[39;00m [
-[1;32m    290[0m     times[38;5;241m.[39mCFDatetimeCoder(),
-[1;32m    291[0m     times[38;5;241m.[39mCFTimedeltaCoder(),
+File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/conventions.py:183[0m, in [0;36mencode_cf_variable[0;34m(var, needs_copy, name)[0m
+[1;32m    161[0m [38;5;28;01mdef[39;00m [38;5;21mencode_cf_variable[39m(
+[1;32m    162[0m     var: Variable, needs_copy: [38;5;28mbool[39m [38;5;241m=[39m [38;5;28;01mTrue[39;00m, name: T_Name [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[1;32m    163[0m ) [38;5;241m-[39m[38;5;241m>[39m Variable:
+[1;32m    164[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m    165[0m [38;5;124;03m    Converts a Variable into a Variable which follows some[39;00m
+[1;32m    166[0m [38;5;124;03m    of the CF conventions:[39;00m
 [0;32m   (...)[0m
-[1;32m    294[0m     variables[38;5;241m.[39mUnsignedIntegerCoder(),
-[1;32m    295[0m ]:
-[0;32m--> 296[0m     var [38;5;241m=[39m [43mcoder[49m[38;5;241;43m.[39;49m[43mencode[49m[43m([49m[43mvar[49m[43m,[49m[43m [49m[43mname[49m[38;5;241;43m=[39;49m[43mname[49m[43m)[49m
-[1;32m    298[0m [38;5;66;03m# TODO(shoyer): convert all of these to use coders, too:[39;00m
-[1;32m    299[0m var [38;5;241m=[39m maybe_encode_nonstring_dtype(var, name[38;5;241m=[39mname)
+[1;32m    181[0m [38;5;124;03m        A variable which has been encoded as described above.[39;00m
+[1;32m    182[0m [38;5;124;03m    """[39;00m
+[0;32m--> 183[0m     [43mensure_not_multiindex[49m[43m([49m[43mvar[49m[43m,[49m[43m [49m[43mname[49m[38;5;241;43m=[39;49m[43mname[49m[43m)[49m
+[1;32m    185[0m     [38;5;28;01mfor[39;00m coder [38;5;129;01min[39;00m [
+[1;32m    186[0m         times[38;5;241m.[39mCFDatetimeCoder(),
+[1;32m    187[0m         times[38;5;241m.[39mCFTimedeltaCoder(),
+[0;32m   (...)[0m
+[1;32m    194[0m         variables[38;5;241m.[39mBooleanCoder(),
+[1;32m    195[0m     ]:
+[1;32m    196[0m         var [38;5;241m=[39m coder[38;5;241m.[39mencode(var, name[38;5;241m=[39mname)
 
-File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/coding/times.py:690[0m, in [0;36mCFDatetimeCoder.encode[0;34m(self, variable, name)[0m
-[1;32m    687[0m [38;5;28;01mdef[39;00m [38;5;21mencode[39m([38;5;28mself[39m, variable: Variable, name: T_Name [38;5;241m=[39m [38;5;28;01mNone[39;00m) [38;5;241m-[39m[38;5;241m>[39m Variable:
-[1;32m    688[0m     [38;5;28;01mif[39;00m np[38;5;241m.[39missubdtype(
-[1;32m    689[0m         variable[38;5;241m.[39mdata[38;5;241m.[39mdtype, np[38;5;241m.[39mdatetime64
-[0;32m--> 690[0m     ) [38;5;129;01mor[39;00m [43mcontains_cftime_datetimes[49m[43m([49m[43mvariable[49m[43m)[49m:
-[1;32m    691[0m         dims, data, attrs, encoding [38;5;241m=[39m unpack_for_encoding(variable)
-[1;32m    693[0m         (data, units, calendar) [38;5;241m=[39m encode_cf_datetime(
-[1;32m    694[0m             data, encoding[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124munits[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m), encoding[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mcalendar[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
-[1;32m    695[0m         )
+File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/conventions.py:88[0m, in [0;36mensure_not_multiindex[0;34m(var, name)[0m
+[1;32m     86[0m [38;5;28;01mdef[39;00m [38;5;21mensure_not_multiindex[39m(var: Variable, name: T_Name [38;5;241m=[39m [38;5;28;01mNone[39;00m) [38;5;241m-[39m[38;5;241m>[39m [38;5;28;01mNone[39;00m:
+[1;32m     87[0m     [38;5;66;03m# only the pandas multi-index dimension coordinate cannot be serialized (tuple values)[39;00m
+[0;32m---> 88[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m([43mvar[49m[38;5;241;43m.[39;49m[43m_data[49m, indexing[38;5;241m.[39mPandasMultiIndexingAdapter):
+[1;32m     89[0m         [38;5;28;01mif[39;00m name [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;28misinstance[39m(var, IndexVariable):
+[1;32m     90[0m             name [38;5;241m=[39m var[38;5;241m.[39mname
 
-File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/core/common.py:1818[0m, in [0;36mcontains_cftime_datetimes[0;34m(var)[0m
-[1;32m   1816[0m [38;5;28;01mdef[39;00m [38;5;21mcontains_cftime_datetimes[39m(var: T_Variable) [38;5;241m-[39m[38;5;241m>[39m [38;5;28mbool[39m:
-[1;32m   1817[0m [38;5;250m    [39m[38;5;124;03m"""Check if an xarray.Variable contains cftime.datetime objects"""[39;00m
-[0;32m-> 1818[0m     [38;5;28;01mreturn[39;00m _contains_cftime_datetimes([43mvar[49m[38;5;241;43m.[39;49m[43m_data[49m)
-
-File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/core/common.py:276[0m, in [0;36mAttrAccessMixin.__getattr__[0;34m(self, name)[0m
-[1;32m    274[0m         [38;5;28;01mwith[39;00m suppress([38;5;167;01mKeyError[39;00m):
-[1;32m    275[0m             [38;5;28;01mreturn[39;00m source[name]
-[0;32m--> 276[0m [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(
-[1;32m    277[0m     [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mtype[39m([38;5;28mself[39m)[38;5;241m.[39m[38;5;18m__name__[39m[38;5;132;01m!r}[39;00m[38;5;124m object has no attribute [39m[38;5;132;01m{[39;00mname[38;5;132;01m!r}[39;00m[38;5;124m"[39m
-[1;32m    278[0m )
+File [0;32m/usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/core/common.py:285[0m, in [0;36mAttrAccessMixin.__getattr__[0;34m(self, name)[0m
+[1;32m    283[0m         [38;5;28;01mwith[39;00m suppress([38;5;167;01mKeyError[39;00m):
+[1;32m    284[0m             [38;5;28;01mreturn[39;00m source[name]
+[0;32m--> 285[0m [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(
+[1;32m    286[0m     [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mtype[39m([38;5;28mself[39m)[38;5;241m.[39m[38;5;18m__name__[39m[38;5;132;01m!r}[39;00m[38;5;124m object has no attribute [39m[38;5;132;01m{[39;00mname[38;5;132;01m!r}[39;00m[38;5;124m"[39m
+[1;32m    287[0m )
 
 [0;31mAttributeError[0m: 'DataArray' object has no attribute '_data'
 AttributeError: 'DataArray' object has no attribute '_data'
