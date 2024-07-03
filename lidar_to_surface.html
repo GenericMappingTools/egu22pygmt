@@ -1055,7 +1055,6 @@ with each pixel’s elevation (🇿 value in metres) stored at every 🇽 and �
 }
 
 html[theme=dark],
-body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -1285,11 +1284,6 @@ body.vscode-dark {
   grid-column: 4;
 }
 
-.xr-index-preview {
-  grid-column: 2 / 5;
-  color: var(--xr-font-color2);
-}
-
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -1311,16 +1305,14 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
+.xr-var-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data,
-.xr-index-data-in:checked ~ .xr-index-data {
+.xr-var-data-in:checked ~ .xr-var-data {
   display: block;
 }
 
@@ -1330,16 +1322,13 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
-.xr-index-name div,
-.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
+.xr-var-data {
   grid-column: 1 / -1;
 }
 
@@ -1377,8 +1366,7 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2,
-.xr-no-icon {
+.xr-icon-file-text2 {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -1387,7 +1375,7 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;z&#x27; (y: 721, x: 481)&gt; Size: 1MB
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;z&#x27; (y: 721, x: 481)&gt;
 array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
         179.47954   , 179.68286   ],
        [ 32.929073  ,  33.571014  ,  33.91027   , ..., 178.95854   ,
@@ -1402,11 +1390,11 @@ array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
        [ -0.7903585 ,  -0.75000775,  -0.78331774, ...,  -0.70826954,
          -0.68685687,  -0.6937212 ]], dtype=float32)
 Coordinates:
-  * x        (x) float64 4kB 1.75e+06 1.75e+06 1.75e+06 ... 1.75e+06 1.75e+06
-  * y        (y) float64 6kB 5.427e+06 5.427e+06 ... 5.428e+06 5.428e+06
+  * x        (x) float64 1.75e+06 1.75e+06 1.75e+06 ... 1.75e+06 1.75e+06
+  * y        (y) float64 5.427e+06 5.427e+06 5.427e+06 ... 5.428e+06 5.428e+06
 Attributes:
     long_name:     z
-    actual_range:  [ -1.83348048 192.18907166]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'z'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 721</li><li><span class='xr-has-index'>x</span>: 481</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-e330bc70-f9af-4d35-91b2-92a329891cff' class='xr-array-in' type='checkbox' checked><label for='section-e330bc70-f9af-4d35-91b2-92a329891cff' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>32.83 33.06 33.24 33.48 33.56 ... -0.732 -0.7083 -0.6869 -0.6937</span></div><div class='xr-array-data'><pre>array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
+    actual_range:  [ -1.83348048 192.18907166]</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'z'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 721</li><li><span class='xr-has-index'>x</span>: 481</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-481dc27b-ecd5-4b84-a781-170df9b30e75' class='xr-array-in' type='checkbox' checked><label for='section-481dc27b-ecd5-4b84-a781-170df9b30e75' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>32.83 33.06 33.24 33.48 33.56 ... -0.732 -0.7083 -0.6869 -0.6937</span></div><div class='xr-array-data'><pre>array([[ 32.827084  ,  33.058956  ,  33.236935  , ..., 179.27199   ,
         179.47954   , 179.68286   ],
        [ 32.929073  ,  33.571014  ,  33.91027   , ..., 178.95854   ,
         179.3416    , 179.49734   ],
@@ -1418,17 +1406,7 @@ Attributes:
        [ -0.7150018 ,  -0.72270995,  -0.7585947 , ...,  -0.6843457 ,
          -0.68121314,  -0.6624484 ],
        [ -0.7903585 ,  -0.75000775,  -0.78331774, ...,  -0.70826954,
-         -0.68685687,  -0.6937212 ]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-f9fe22a9-3e2d-4be5-a910-a528d21a0bf9' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f9fe22a9-3e2d-4be5-a910-a528d21a0bf9' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.75e+06 1.75e+06 ... 1.75e+06</div><input id='attrs-7470c9b5-75ea-4db6-8848-f378f7546a6f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7470c9b5-75ea-4db6-8848-f378f7546a6f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aa1cc8e9-d21c-48ac-ae5d-bc2c6a0090c8' class='xr-var-data-in' type='checkbox'><label for='data-aa1cc8e9-d21c-48ac-ae5d-bc2c6a0090c8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>x</dd><dt><span>actual_range :</span></dt><dd>[1749760. 1750240.]</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([1749760., 1749761., 1749762., ..., 1750238., 1750239., 1750240.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.427e+06 5.427e+06 ... 5.428e+06</div><input id='attrs-953e25e1-381c-4658-8229-5367a5da6d27' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-953e25e1-381c-4658-8229-5367a5da6d27' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d3cf3b7c-a00c-4cc5-8536-c1a71ec295ff' class='xr-var-data-in' type='checkbox'><label for='data-d3cf3b7c-a00c-4cc5-8536-c1a71ec295ff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>y</dd><dt><span>actual_range :</span></dt><dd>[5426880. 5427600.]</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([5426880., 5426881., 5426882., ..., 5427598., 5427599., 5427600.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-72458087-3cf8-4006-af7f-2b925ce144f3' class='xr-section-summary-in' type='checkbox'  ><label for='section-72458087-3cf8-4006-af7f-2b925ce144f3' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-fa84c38c-a868-4ad1-8b19-6daab2ed2002' class='xr-index-data-in' type='checkbox'/><label for='index-fa84c38c-a868-4ad1-8b19-6daab2ed2002' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1749760.0, 1749761.0, 1749762.0, 1749763.0, 1749764.0, 1749765.0,
-       1749766.0, 1749767.0, 1749768.0, 1749769.0,
-       ...
-       1750231.0, 1750232.0, 1750233.0, 1750234.0, 1750235.0, 1750236.0,
-       1750237.0, 1750238.0, 1750239.0, 1750240.0],
-      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=481))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-29c48e01-d20a-448e-ab9c-47aebd28c98c' class='xr-index-data-in' type='checkbox'/><label for='index-29c48e01-d20a-448e-ab9c-47aebd28c98c' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([5426880.0, 5426881.0, 5426882.0, 5426883.0, 5426884.0, 5426885.0,
-       5426886.0, 5426887.0, 5426888.0, 5426889.0,
-       ...
-       5427591.0, 5427592.0, 5427593.0, 5427594.0, 5427595.0, 5427596.0,
-       5427597.0, 5427598.0, 5427599.0, 5427600.0],
-      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=721))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-46169aa8-dbc7-4350-9dad-01246fe7814f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-46169aa8-dbc7-4350-9dad-01246fe7814f' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>z</dd><dt><span>actual_range :</span></dt><dd>[ -1.83348048 192.18907166]</dd></dl></div></li></ul></div></div></div></div>
+         -0.68685687,  -0.6937212 ]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-013d8f1e-007e-4c02-8c7b-c893fe631988' class='xr-section-summary-in' type='checkbox'  checked><label for='section-013d8f1e-007e-4c02-8c7b-c893fe631988' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.75e+06 1.75e+06 ... 1.75e+06</div><input id='attrs-adc69619-1622-4e21-ba02-7dcbb057e15e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-adc69619-1622-4e21-ba02-7dcbb057e15e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-91312c67-d16e-44cf-a791-e2572c362351' class='xr-var-data-in' type='checkbox'><label for='data-91312c67-d16e-44cf-a791-e2572c362351' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>x</dd><dt><span>actual_range :</span></dt><dd>[1749760. 1750240.]</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([1749760., 1749761., 1749762., ..., 1750238., 1750239., 1750240.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.427e+06 5.427e+06 ... 5.428e+06</div><input id='attrs-79eb173c-6fca-4c44-a05f-20cf128176e1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-79eb173c-6fca-4c44-a05f-20cf128176e1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2eac97bf-ae2b-45ff-8da6-080a2e846b9b' class='xr-var-data-in' type='checkbox'><label for='data-2eac97bf-ae2b-45ff-8da6-080a2e846b9b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>y</dd><dt><span>actual_range :</span></dt><dd>[5426880. 5427600.]</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([5426880., 5426881., 5426882., ..., 5427598., 5427599., 5427600.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a02414dc-a43d-4430-8e4d-bbe024a82c1f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a02414dc-a43d-4430-8e4d-bbe024a82c1f' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>z</dd><dt><span>actual_range :</span></dt><dd>[ -1.83348048 192.18907166]</dd></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 </div>
@@ -1553,84 +1531,6 @@ This can be done using
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">to_raster</span><span class="p">(</span><span class="n">raster_path</span><span class="o">=</span><span class="s2">&quot;DSM_of_Wellington.tif&quot;</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/rioxarray/raster_array.py:1100,</span> in <span class="ni">RasterArray.to_raster</span><span class="nt">(self, raster_path, driver, dtype, tags, windowed, recalc_transform, lock, compute, **profile_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1081</span> <span class="n">out_profile</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">   </span><span class="mi">1082</span>     <span class="n">key</span><span class="p">:</span> <span class="n">value</span>
-<span class="nn">   1083     for key, value</span> in <span class="ni">out_profile.items</span><span class="nt">()</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1094</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span> <span class="p">}</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span> <span class="n">rio_nodata</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>     <span class="bp">self</span><span class="o">.</span><span class="n">encoded_nodata</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoded_nodata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodata</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1100</span> <span class="k">return</span> <span class="n">RasterioWriter</span><span class="p">(</span><span class="n">raster_path</span><span class="o">=</span><span class="n">raster_path</span><span class="p">)</span><span class="o">.</span><span class="n">to_raster</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="n">xarray_dataarray</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1102</span>     <span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1103</span>     <span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>     <span class="n">height</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span>     <span class="n">width</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1106</span>     <span class="n">count</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span>     <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="n">crs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1109</span>     <span class="n">transform</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">recalc</span><span class="o">=</span><span class="n">recalc_transform</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1110</span>     <span class="n">gcps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_gcps</span><span class="p">(),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1111</span>     <span class="n">nodata</span><span class="o">=</span><span class="n">rio_nodata</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1112</span>     <span class="n">windowed</span><span class="o">=</span><span class="n">windowed</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1113</span>     <span class="n">lock</span><span class="o">=</span><span class="n">lock</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1114</span>     <span class="n">compute</span><span class="o">=</span><span class="n">compute</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1115</span>     <span class="o">**</span><span class="n">out_profile</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1116</span> <span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/rioxarray/raster_writer.py:252,</span> in <span class="ni">RasterioWriter.to_raster</span><span class="nt">(self, xarray_dataarray, tags, windowed, lock, compute, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">out_data</span> <span class="o">=</span> <span class="n">xarray_dataarray</span>
-<span class="ne">--&gt; </span><span class="mi">252</span> <span class="n">data</span> <span class="o">=</span> <span class="n">encode_cf_variable</span><span class="p">(</span><span class="n">out_data</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy_dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span> <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span>     <span class="n">rds</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">window</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/conventions.py:183,</span> in <span class="ni">encode_cf_variable</span><span class="nt">(var, needs_copy, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="k">def</span> <span class="nf">encode_cf_variable</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="n">var</span><span class="p">:</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">needs_copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">T_Name</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variable</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span><span class="sd">     Converts a Variable into a Variable which follows some</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span><span class="sd">     of the CF conventions:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="sd">         A variable which has been encoded as described above.</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">183</span>     <span class="n">ensure_not_multiindex</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="k">for</span> <span class="n">coder</span> <span class="ow">in</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>         <span class="n">times</span><span class="o">.</span><span class="n">CFDatetimeCoder</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>         <span class="n">times</span><span class="o">.</span><span class="n">CFTimedeltaCoder</span><span class="p">(),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span>         <span class="n">variables</span><span class="o">.</span><span class="n">BooleanCoder</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span>         <span class="n">var</span> <span class="o">=</span> <span class="n">coder</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/conventions.py:88,</span> in <span class="ni">ensure_not_multiindex</span><span class="nt">(var, name)</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="k">def</span> <span class="nf">ensure_not_multiindex</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">T_Name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span>     <span class="c1"># only the pandas multi-index dimension coordinate cannot be serialized (tuple values)</span>
-<span class="ne">---&gt; </span><span class="mi">88</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indexing</span><span class="o">.</span><span class="n">PandasMultiIndexingAdapter</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span>         <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">IndexVariable</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>             <span class="n">name</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">name</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/egu22pygmt/lib/python3.9/site-packages/xarray/core/common.py:285,</span> in <span class="ni">AttrAccessMixin.__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span>         <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span>             <span class="k">return</span> <span class="n">source</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">285</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">!r}</span><span class="s2"> object has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">287</span> <span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;DataArray&#39; object has no attribute &#39;_data&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>The files should now appear on the file list on the left,
 and you can download them to your computer.</p>
@@ -1689,6 +1589,31 @@ and you can download them to your computer.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="create-a-dsm">
