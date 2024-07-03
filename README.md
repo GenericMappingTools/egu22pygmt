@@ -6,6 +6,12 @@
 Material for the [PyGMT](https://github.com/GenericMappingTools/pygmt)
 short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 
+**Recording**:
+
+A recording of the full short course is available on YouTube:
+
+[![YouTube Playlist](https://img.youtube.com/vi/Dgf6ijduNoE/0.jpg)](https://youtube.com/playlist?list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG)
+
 **Conveners**:
 - [Wei Ji Leong](https://github.com/weiji14)
 - [Leonardo Uieda](https://github.com/leouieda)
@@ -24,11 +30,11 @@ short course at [EGU General Assembly 2022](https://www.egu22.eu)!
 
 |  Time (UTC) | Event                                                 |
 |:------------|:------------------------------------------------------|
-| 13:10-13:17 | Introduction                                          |
-| 13:17-13.39 | Anatomy of a PyGMT figure                             |
-| 13:39-13.55 | Integration with the scientific Python ecosystem      |
-| 13:55-14.15 | Making some Mars maps with pygmt                      |
-| 14:15-14.40 | LiDAR Point clouds to 3D surfaces                     |
+| 13:10-13:17 | [Introduction](https://www.youtube.com/watch?v=Dgf6ijduNoE&list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG&index=1) |
+| 13:17-13.39 | [Anatomy of a PyGMT figure](https://www.youtube.com/watch?v=96_reU_yh5I&list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG&index=2) |
+| 13:39-13.55 | [Integration with the scientific Python ecosystem](https://www.youtube.com/watch?v=72war16Mvxs&list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG&index=3) |
+| 13:55-14.15 | [Making some Mars maps with pygmt](https://www.youtube.com/watch?v=OMxn08pT8hw&list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG&index=4) |
+| 14:15-14.40 | [LiDAR Point clouds to 3D surfaces](https://www.youtube.com/watch?v=n1C4wyqJY_o&list=PL3GHXjKa-p6VBA_MlUP7T_ByCFYQZ5uDG&index=5) |
 
 ## Getting started
 

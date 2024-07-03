@@ -30,21 +30,16 @@ jobs:
 
     # Install Mambaforge with conda-forge dependencies
     - name: Setup Mambaforge
-      uses: conda-incubator/setup-miniconda@v2.1.1
+      uses: mamba-org/setup-micromamba@v1.9.0
       with:
-        activate-environment: egu22pygmt
-        environment-file: environment.yml
-        python-version: ${{ matrix.python-version }}
-        channels: conda-forge
-        channel-priority: strict
-        miniforge-version: latest
-        miniforge-variant: Mambaforge
-        mamba-version: "*"
-        use-mamba: true
-
-    # Show installed pkg information for postmortem diagnostic
-    - name: List installed packages
-      run: mamba list
+        environment-name: egu22pygmt
+        environment-file: conda-lock.yml
+        create-args: >-
+          python=${{ matrix.python-version }}
+        condarc: |
+          channels:
+            - conda-forge
+            - nodefaults
 
     # Build the book
     - name: Build the book
