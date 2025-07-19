@@ -2,6 +2,7 @@
 
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://www.generic-mapping-tools.org/egu22pygmt)
 [![deploy-book](https://github.com/GenericMappingTools/egu22pygmt/actions/workflows/deploy-book.yml/badge.svg)](https://github.com/GenericMappingTools/egu22pygmt/actions/workflows/deploy-book.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12630775.svg)](https://doi.org/10.5281/zenodo.12630775)
 
 Material for the [PyGMT](https://github.com/GenericMappingTools/pygmt)
 short course at [EGU General Assembly 2022](https://www.egu22.eu)!
